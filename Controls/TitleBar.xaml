@@ -15,8 +15,8 @@
             <Style TargetType="{x:Type Button}">
                 <Setter Property="FocusVisualStyle" Value="{x:Null}" />
                 <Setter Property="Focusable" Value="False" />
-                <Setter Property="Background" Value="{StaticResource Brush.Darkest}" />
-                <Setter Property="Foreground" Value="{StaticResource Brush.Dark}" />
+                <Setter Property="Background" Value="{StaticResource Background.Dark}" />
+                <Setter Property="Foreground" Value="{StaticResource Background.Main}" />
                 <Setter Property="HorizontalContentAlignment" Value="Center" />
                 <Setter Property="VerticalContentAlignment" Value="Center" />
                 <Setter Property="Template">
@@ -50,7 +50,7 @@
             <ColumnDefinition Width="40px" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Background="{StaticResource Brush.Darkest}" MouseLeftButtonDown="DragBar_MouseLeftButtonDown">
+        <Grid Grid.Column="0" Background="{StaticResource Background.Dark}" MouseLeftButtonDown="DragBar_MouseLeftButtonDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="32px" />
                 <ColumnDefinition Width="*" />

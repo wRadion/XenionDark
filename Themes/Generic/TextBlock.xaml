@@ -7,7 +7,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type local:TextBlock}">
-        <Setter Property="Foreground" Value="{StaticResource Brush.Light}" />
+        <Setter Property="Foreground" Value="{StaticResource Foreground.Main}" />
     </Style>
 
 </ResourceDictionary>

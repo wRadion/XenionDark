@@ -1,9 +1,10 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/TextBlock.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Window.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Button.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

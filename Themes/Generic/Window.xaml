@@ -29,7 +29,7 @@
 
                                 <!-- Title Bar -->
                                 <controls:TitleBar DockPanel.Dock="Top" Height="32px"
-                                               Background="{StaticResource Brush.Darkest}"
+                                               Background="{StaticResource Background.Dark}"
                                                Window="{Binding ThisWindow, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                                Title="{TemplateBinding Title}">
                                     <controls:TitleBar.Icon>
@@ -38,7 +38,7 @@
                                 </controls:TitleBar>
 
                                 <!-- Main Content -->
-                                <Border Background="{StaticResource Brush.Darker}">
+                                <Border Background="{StaticResource Background.Main}">
                                     <ContentPresenter Content="{TemplateBinding Content}" />
                                 </Border>
 
