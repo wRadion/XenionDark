@@ -48,7 +48,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Button.cs" />
     <Compile Include="Controls\TitleBar.xaml.cs">
       <DependentUpon>TitleBar.xaml</DependentUpon>
     </Compile>
@@ -70,10 +69,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Resource>
-    <Page Include="Themes\Generic\Button.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Themes\Generic\TextBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

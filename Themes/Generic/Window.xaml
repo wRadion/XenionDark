@@ -23,25 +23,27 @@
                     <Border x:Name="BorderMain"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Background="{TemplateBinding MaximizedBorderBrush}">
-                        <DockPanel>
+                            Background="Transparent" Padding="0">
+                        <Border x:Name="BorderMaximized" Background="{TemplateBinding MaximizedBorderBrush}">
+                            <DockPanel>
 
-                            <!-- Title Bar -->
-                            <controls:TitleBar DockPanel.Dock="Top" Height="32px"
+                                <!-- Title Bar -->
+                                <controls:TitleBar DockPanel.Dock="Top" Height="32px"
                                                Background="{StaticResource Brush.Darkest}"
                                                Window="{Binding ThisWindow, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                                Title="{TemplateBinding Title}">
-                                <controls:TitleBar.Icon>
-                                    <Image Width="24px" Height="24px" Source="{TemplateBinding Icon}" RenderOptions.BitmapScalingMode="HighQuality" />
-                                </controls:TitleBar.Icon>
-                            </controls:TitleBar>
+                                    <controls:TitleBar.Icon>
+                                        <Image Width="24px" Height="24px" Source="{TemplateBinding Icon}" RenderOptions.BitmapScalingMode="HighQuality" />
+                                    </controls:TitleBar.Icon>
+                                </controls:TitleBar>
 
-                            <!-- Main Content -->
-                            <Border Background="{StaticResource Brush.Darker}">
-                                <ContentPresenter Content="{TemplateBinding Content}" />
-                            </Border>
+                                <!-- Main Content -->
+                                <Border Background="{StaticResource Brush.Darker}">
+                                    <ContentPresenter Content="{TemplateBinding Content}" />
+                                </Border>
 
-                        </DockPanel>
+                            </DockPanel>
+                        </Border>
                     </Border>
 
                     <ControlTemplate.Triggers>
@@ -49,12 +51,13 @@
                             <Setter TargetName="BorderMain" Property="Padding" Value="0" />
                         </Trigger>
                         <Trigger Property="WindowState" Value="Maximized">
-                            <Setter TargetName="BorderMain" Property="Padding" Value="{Binding OffsetBorderThickness, Mode=OneTime, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                            <Setter TargetName="BorderMain" Property="Padding" Value="7px" />
+                            <Setter TargetName="BorderMaximized" Property="Padding" Value="{Binding MaximizedBorderThickness, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
 </ResourceDictionary>
