@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:XenionDark">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type local:TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Brush.Light}" />
+    </Style>
+
+</ResourceDictionary>
