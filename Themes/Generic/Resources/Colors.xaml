@@ -9,5 +9,5 @@
     <Color x:Key="Secondary.Main"  R="192" G="192" B="192" A="255" /> <!-- #C0C0C0 -->
     <Color x:Key="Secondary.Light" R="224" G="224" B="224" A="255" /> <!-- #E0E0E0 -->
     <Color x:Key="Red.Main"        R="196" G="32"  B="32"  A="255" /> <!-- #C02020 -->
- 
+
 </ResourceDictionary>

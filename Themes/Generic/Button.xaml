@@ -13,7 +13,7 @@
     <SolidColorBrush x:Key="Button.Background.Hover"    Color="White"                            Opacity="0.1" />
     <SolidColorBrush x:Key="Button.Foreground.Hover"    Color="{StaticResource Secondary.Light}" Opacity="1" />
     <SolidColorBrush x:Key="Button.Border.Hover"        Color="{StaticResource Medium}"          Opacity="1" />
-    
+
     <SolidColorBrush x:Key="Button.Background.Pressed"  Color="{StaticResource Primary.Dark}"    Opacity="1" />
     <SolidColorBrush x:Key="Button.Foreground.Pressed"  Color="{StaticResource Secondary.Dark}"  Opacity="1" />
     <SolidColorBrush x:Key="Button.Border.Pressed"      Color="{StaticResource Primary.Light}"   Opacity="1" />

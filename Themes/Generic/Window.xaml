@@ -54,7 +54,7 @@
                         <Trigger Property="WindowState" Value="Normal">
                             <Setter TargetName="border" Property="Padding" Value="0" />
                         </Trigger>
-                        
+
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter TargetName="border"          Property="Padding" Value="8px" />
                             <Setter TargetName="borderMaximized" Property="Padding" Value="{Binding MaximizedBorderThickness, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
