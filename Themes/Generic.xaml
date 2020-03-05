@@ -5,6 +5,9 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/TextBlock.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Window.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Button.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/TextBox.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ComboBoxItem.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ComboBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

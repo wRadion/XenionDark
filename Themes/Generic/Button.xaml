@@ -6,58 +6,91 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="FocusVisual">
-        <Setter Property="Control.Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+    <SolidColorBrush x:Key="Button.Background.Normal"   Color="{StaticResource Primary.Light}"   Opacity="1" />
+    <SolidColorBrush x:Key="Button.Foreground.Normal"   Color="{StaticResource Secondary.Main}"  Opacity="1" />
+    <SolidColorBrush x:Key="Button.Border.Normal"       Color="{StaticResource Primary.Dark}"    Opacity="1" />
+
+    <SolidColorBrush x:Key="Button.Background.Hover"    Color="White"                            Opacity="0.1" />
+    <SolidColorBrush x:Key="Button.Foreground.Hover"    Color="{StaticResource Secondary.Light}" Opacity="1" />
+    <SolidColorBrush x:Key="Button.Border.Hover"        Color="{StaticResource Medium}"          Opacity="1" />
+    
+    <SolidColorBrush x:Key="Button.Background.Pressed"  Color="{StaticResource Primary.Dark}"    Opacity="1" />
+    <SolidColorBrush x:Key="Button.Foreground.Pressed"  Color="{StaticResource Secondary.Dark}"  Opacity="1" />
+    <SolidColorBrush x:Key="Button.Border.Pressed"      Color="{StaticResource Primary.Light}"   Opacity="1" />
+
+    <SolidColorBrush x:Key="Button.Background.Disabled" Color="{StaticResource Primary.Dark}"    Opacity="1" />
+    <SolidColorBrush x:Key="Button.Foreground.Disabled" Color="{StaticResource Medium}"          Opacity="1" />
+    <SolidColorBrush x:Key="Button.Border.Disabled"     Color="{StaticResource Primary.Light}"   Opacity="1" />
 
     <Style TargetType="{x:Type local:Button}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Background.Light}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Background.Dark}"/>
-        <Setter Property="Foreground" Value="{StaticResource Foreground.Main}"/>
-        <Setter Property="BorderThickness" Value="1px"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="8px 4px"/>
+        <Setter Property="Background"  Value="{StaticResource Button.Background.Normal}" />
+        <Setter Property="Foreground"  Value="{StaticResource Button.Foreground.Normal}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Border.Normal}" />
+        <Setter Property="BorderThickness" Value="1px" />
+
+        <Setter Property="FocusVisualStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type local:Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Border Background="Red" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment"   Value="Center" />
+        <Setter Property="Padding" Value="8px" />
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Button}">
-                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
-                        <Border x:Name="contentBorder">
+
+                    <Border x:Name="border"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}">
+
+                        <Border x:Name="contentBorder" Padding="{TemplateBinding Padding}">
                             <Border.BorderBrush>
                                 <SolidColorBrush Color="Black" Opacity="0.5" />
                             </Border.BorderBrush>
 
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            <ContentPresenter x:Name="content"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True" />
                         </Border>
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Foreground.Main}" />
-                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Control.Hover}" />
+                            <Setter TargetName="border"  Property="Background"             Value="{StaticResource Button.Background.Hover}" />
+                            <Setter TargetName="border"  Property="BorderBrush"            Value="{StaticResource Button.Border.Hover}" />
+                            <Setter TargetName="content" Property="TextElement.Foreground" Value="{StaticResource Button.Foreground.Hover}" />
                         </Trigger>
+
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="BorderThickness" TargetName="contentBorder" Value="1 1 0 0" />
-                            <Setter Property="Margin" TargetName="contentBorder" Value="0 0 -1 -1" />
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Control.Pressed}" />
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Background.Light}" />
+                            <Setter TargetName="border"        Property="Background"             Value="{StaticResource Button.Background.Pressed}" />
+                            <Setter TargetName="border"        Property="BorderBrush"            Value="{StaticResource Button.Border.Pressed}" />
+                            <Setter TargetName="content"       Property="TextElement.Foreground" Value="{StaticResource Button.Foreground.Pressed}" />
+                            <Setter TargetName="contentBorder" Property="BorderThickness"        Value="1 1 0 0" />
+                            <Setter TargetName="contentBorder" Property="Margin"                 Value="0 0 -1 -1" />
                         </Trigger>
+
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Background.Dark}" />
-                            <Setter Property="BorderBrush" TargetName="border" Value="Black" />
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Foreground.Disabled}" />
+                            <Setter TargetName="border"  Property="Background"             Value="{StaticResource Button.Background.Disabled}" />
+                            <Setter TargetName="border"  Property="BorderBrush"            Value="{StaticResource Button.Border.Disabled}" />
+                            <Setter TargetName="content" Property="TextElement.Foreground" Value="{StaticResource Button.Foreground.Disabled}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
+
             </Setter.Value>
         </Setter>
     </Style>

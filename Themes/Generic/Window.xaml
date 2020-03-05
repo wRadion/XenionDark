@@ -7,12 +7,13 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <SolidColorBrush x:Key="MainContent.Background" Color="{StaticResource Primary.Main}" />
+
     <Style TargetType="{x:Type local:Window}">
-        <Setter Property="WindowStyle" Value="None" />
-        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="WindowStyle" Value="ThreeDBorderWindow" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
-                <WindowChrome CaptionHeight="0" />
+                <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" UseAeroCaptionButtons="False" />
             </Setter.Value>
         </Setter>
 
@@ -20,25 +21,28 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Window}">
 
-                    <Border x:Name="BorderMain"
+                    <Border x:Name="border"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="Transparent" Padding="0">
-                        <Border x:Name="BorderMaximized" Background="{TemplateBinding MaximizedBorderBrush}">
+                        <Border x:Name="borderMaximized" Background="{TemplateBinding MaximizedBorderBrush}">
                             <DockPanel>
 
                                 <!-- Title Bar -->
-                                <controls:TitleBar DockPanel.Dock="Top" Height="32px"
-                                               Background="{StaticResource Background.Dark}"
-                                               Window="{Binding ThisWindow, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                               Title="{TemplateBinding Title}">
+                                <controls:TitleBar DockPanel.Dock="Top"
+                                                   Height="32px"
+                                                   Window="{Binding ThisWindow, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                   Title="{TemplateBinding Title}">
                                     <controls:TitleBar.Icon>
-                                        <Image Width="24px" Height="24px" Source="{TemplateBinding Icon}" RenderOptions.BitmapScalingMode="HighQuality" />
+                                        <Image Width="24px"
+                                               Height="24px"
+                                               Source="{TemplateBinding Icon}"
+                                               RenderOptions.BitmapScalingMode="HighQuality" />
                                     </controls:TitleBar.Icon>
                                 </controls:TitleBar>
 
                                 <!-- Main Content -->
-                                <Border Background="{StaticResource Background.Main}">
+                                <Border Background="{StaticResource MainContent.Background}">
                                     <ContentPresenter Content="{TemplateBinding Content}" />
                                 </Border>
 
@@ -48,13 +52,15 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Normal">
-                            <Setter TargetName="BorderMain" Property="Padding" Value="0" />
+                            <Setter TargetName="border" Property="Padding" Value="0" />
                         </Trigger>
+                        
                         <Trigger Property="WindowState" Value="Maximized">
-                            <Setter TargetName="BorderMain" Property="Padding" Value="7px" />
-                            <Setter TargetName="BorderMaximized" Property="Padding" Value="{Binding MaximizedBorderThickness, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+                            <Setter TargetName="border"          Property="Padding" Value="8px" />
+                            <Setter TargetName="borderMaximized" Property="Padding" Value="{Binding MaximizedBorderThickness, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
