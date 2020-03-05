@@ -50,11 +50,11 @@
         <Setter Property="FocusVisualStyle" Value="{StaticResource Main.FocusVisualStyle}" />
 
         <Setter Property="Margin"  Value="0" />
-        <Setter Property="Padding" Value="6,3,5,3" />
+        <Setter Property="Padding" Value="6px 3px 5px 3px" />
 
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
         <Setter Property="ScrollViewer.PanningMode" Value="Both" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
 
@@ -135,7 +135,7 @@
                                             Background="{TemplateBinding Background}"
                                             BorderBrush="{StaticResource ComboBox.DropDown.Border.Normal}"
                                             BorderThickness="{TemplateBinding BorderThickness}">
-                                        <ScrollViewer x:Name="DropDownScrollViewer">
+                                        <local:ScrollViewer x:Name="DropDownScrollViewer">
                                             <Grid RenderOptions.ClearTypeHint="Enabled">
                                                 <Canvas Width="0"
                                                         Height="0"
@@ -147,7 +147,7 @@
                                                 </Canvas>
                                                 <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" />
                                             </Grid>
-                                        </ScrollViewer>
+                                        </local:ScrollViewer>
                                     </Border>
                                 </Border>
                             </Popup>

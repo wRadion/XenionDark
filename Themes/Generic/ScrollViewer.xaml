@@ -1,0 +1,68 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:XenionDark">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="ScrollViewer.Background.Normal" Color="{StaticResource Dark.Main}" Opacity="1" />
+
+    <Style TargetType="{x:Type local:ScrollViewer}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ScrollViewer}">
+
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Rectangle Grid.Column="1" Grid.Row="1" Fill="{StaticResource ScrollViewer.Background.Normal}" />
+
+                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                Grid.Column="0"
+                                                Grid.Row="0"
+                                                CanContentScroll="{TemplateBinding CanContentScroll}"
+                                                CanHorizontallyScroll="False"
+                                                CanVerticallyScroll="False"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                Content="{TemplateBinding Content}"
+                                                Margin="{TemplateBinding Padding}" />
+
+                        <local:ScrollBar x:Name="PART_VerticalScrollBar"
+                                         Grid.Column="1"
+                                         Grid.Row="0"
+                                         AutomationProperties.AutomationId="VerticalScrollBar"
+                                         Cursor="Arrow"
+                                         Maximum="{TemplateBinding ScrollableHeight}"
+                                         Minimum="0"
+                                         Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                         Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                         ViewportSize="{TemplateBinding ViewportHeight}"/>
+
+                        <local:ScrollBar x:Name="PART_HorizontalScrollBar"
+                                         Grid.Column="0"
+                                         Grid.Row="1"
+                                         AutomationProperties.AutomationId="HorizontalScrollBar"
+                                         Cursor="Arrow"
+                                         Maximum="{TemplateBinding ScrollableWidth}"
+                                         Minimum="0"
+                                         Orientation="Horizontal"
+                                         Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                         Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                         ViewportSize="{TemplateBinding ViewportWidth}"/>
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

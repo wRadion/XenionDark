@@ -6,9 +6,14 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Window.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Button.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/TextBox.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ScrollBar.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ScrollViewer.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ComboBoxItem.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ComboBox.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/CheckBox.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/RadioButton.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ListBoxItem.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ListBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

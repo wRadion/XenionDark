@@ -14,13 +14,13 @@
     <SolidColorBrush x:Key="ComboBoxItem.Foreground.Hover"    Color="{StaticResource Light.Light}" Opacity="1" />
     <SolidColorBrush x:Key="ComboBoxItem.Border.Hover"        Color="Transparent"                  Opacity="1" />
 
-    <SolidColorBrush x:Key="ComboBoxItem.Background.Selected" Color="{StaticResource Medium}"      Opacity="1" />
-    <SolidColorBrush x:Key="ComboBoxItem.Foreground.Selected" Color="{StaticResource Dark.Dark}"   Opacity="1" />
-    <SolidColorBrush x:Key="ComboBoxItem.Border.Selected"     Color="Transparent"                  Opacity="1" />
-
     <SolidColorBrush x:Key="ComboBoxItem.Background.Disabled" Color="Transparent"                  Opacity="1" />
     <SolidColorBrush x:Key="ComboBoxItem.Foreground.Disabled" Color="{StaticResource Medium}"      Opacity="1" />
     <SolidColorBrush x:Key="ComboBoxItem.Border.Disabled"     Color="Transparent"                  Opacity="1" />
+
+    <SolidColorBrush x:Key="ComboBoxItem.Background.Selected" Color="{StaticResource Medium}"      Opacity="1" />
+    <SolidColorBrush x:Key="ComboBoxItem.Foreground.Selected" Color="{StaticResource Dark.Dark}"   Opacity="1" />
+    <SolidColorBrush x:Key="ComboBoxItem.Border.Selected"     Color="Transparent"                  Opacity="1" />
 
     <Style TargetType="{x:Type local:ComboBoxItem}">
         <Setter Property="Background"  Value="{StaticResource ComboBoxItem.Background.Normal}"/>
@@ -33,7 +33,7 @@
 
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Focusable"        Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource Main.FocusVisualStyle}"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
 
         <Setter Property="Margin"  Value="0" />
         <Setter Property="Padding" Value="12px 6px"/>
@@ -44,38 +44,38 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ComboBoxItem}">
 
-                    <Border x:Name="border"
-                            BorderBrush="{TemplateBinding BorderBrush}"
+                    <Border BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
                             Padding="{TemplateBinding Padding}">
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        <ContentPresenter TextElement.Foreground="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background"             Value="{StaticResource ComboBoxItem.Background.Hover}" />
-                            <Setter TargetName="border" Property="TextElement.Foreground" Value="{StaticResource ComboBoxItem.Foreground.Hover}" />
-                            <Setter TargetName="border" Property="BorderBrush"            Value="{StaticResource ComboBoxItem.Border.Hover}" />
+                            <Setter Property="Background"  Value="{StaticResource ComboBoxItem.Background.Hover}" />
+                            <Setter Property="Foreground"  Value="{StaticResource ComboBoxItem.Foreground.Hover}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ComboBoxItem.Border.Hover}" />
                         </Trigger>
 
                         <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter TargetName="border" Property="Background"             Value="{StaticResource ComboBoxItem.Background.Hover}" />
-                            <Setter TargetName="border" Property="TextElement.Foreground" Value="{StaticResource ComboBoxItem.Foreground.Hover}" />
-                            <Setter TargetName="border" Property="BorderBrush"            Value="{StaticResource ComboBoxItem.Border.Hover}" />
-                        </Trigger>
-
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="border" Property="Background"             Value="{StaticResource ComboBoxItem.Background.Selected}" />
-                            <Setter TargetName="border" Property="TextElement.Foreground" Value="{StaticResource ComboBoxItem.Foreground.Selected}" />
-                            <Setter TargetName="border" Property="BorderBrush"            Value="{StaticResource ComboBoxItem.Border.Selected}" />
+                            <Setter Property="Background"  Value="{StaticResource ComboBoxItem.Background.Hover}" />
+                            <Setter Property="Foreground"  Value="{StaticResource ComboBoxItem.Foreground.Hover}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ComboBoxItem.Border.Hover}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="border" Property="Background"             Value="{StaticResource ComboBoxItem.Background.Disabled}" />
-                            <Setter TargetName="border" Property="TextElement.Foreground" Value="{StaticResource ComboBoxItem.Foreground.Disabled}" />
-                            <Setter TargetName="border" Property="BorderBrush"            Value="{StaticResource ComboBoxItem.Border.Disabled}" />
+                            <Setter Property="Background"  Value="{StaticResource ComboBoxItem.Background.Disabled}" />
+                            <Setter Property="Foreground"  Value="{StaticResource ComboBoxItem.Foreground.Disabled}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ComboBoxItem.Border.Disabled}" />
+                        </Trigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background"  Value="{StaticResource ComboBoxItem.Background.Selected}" />
+                            <Setter Property="Foreground"  Value="{StaticResource ComboBoxItem.Foreground.Selected}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ComboBoxItem.Border.Selected}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

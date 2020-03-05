@@ -1,0 +1,141 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:XenionDark">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="RadioButton.Circle.Background.Normal"   Color="{StaticResource Dark.Light}"  Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Foreground.Normal"          Color="{StaticResource Light.Main}"  Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Circle.Foreground.Normal"   Color="{StaticResource Light.Dark}"  Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Circle.Border.Normal"       Color="{StaticResource Dark.Dark}"   Opacity="1" />
+
+    <SolidColorBrush x:Key="RadioButton.Circle.Background.Hover"    Color="White"                        Opacity="0.1" />
+    <SolidColorBrush x:Key="RadioButton.Foreground.Hover"           Color="{StaticResource Light.Light}" Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Circle.Foreground.Hover"    Color="{StaticResource Light.Main}"  Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Circle.Border.Hover"        Color="{StaticResource Medium}"      Opacity="1" />
+
+    <SolidColorBrush x:Key="RadioButton.Circle.Background.Pressed"  Color="{StaticResource Dark.Main}"   Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Foreground.Pressed"         Color="{StaticResource Light.Main}"  Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Circle.Foreground.Pressed"  Color="{StaticResource Medium}"      Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Circle.Border.Pressed"      Color="{StaticResource Dark.Light}"  Opacity="1" />
+
+    <SolidColorBrush x:Key="RadioButton.Circle.Background.Disabled" Color="{StaticResource Dark.Dark}"   Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Foreground.Disabled"        Color="{StaticResource Medium}"      Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Circle.Foreground.Disabled" Color="{StaticResource Medium}"      Opacity="1" />
+    <SolidColorBrush x:Key="RadioButton.Circle.Border.Disabled"     Color="{StaticResource Dark.Light}"  Opacity="1" />
+
+    <Style TargetType="{x:Type local:RadioButton}">
+        <Setter Property="Background"  Value="{StaticResource RadioButton.Circle.Background.Normal}" />
+        <Setter Property="Foreground"  Value="{StaticResource RadioButton.Foreground.Normal}" />
+        <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Circle.Border.Normal}" />
+        <Setter Property="BorderThickness" Value="2" />
+
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource Main.FocusVisualStyle}" />
+        <Setter Property="Focusable"        Value="True" />
+
+        <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
+        <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />
+
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment"   Value="Center" />
+        <Setter Property="Margin"  Value="0" />
+        <Setter Property="Padding" Value="4px" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:RadioButton}">
+
+                    <Grid x:Name="templateRoot" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border x:Name="radioButtonBorder"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="100"
+                                Width="22px"
+                                Height="22px"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Margin="1 1 2 1">
+                            <Grid x:Name="markGrid">
+                                <Border x:Name="circle"
+                                        Background="{StaticResource RadioButton.Circle.Foreground.Normal}"
+                                        BorderBrush="{TemplateBinding Background}"
+                                        BorderThickness="4"
+                                        Visibility="Hidden"
+                                        CornerRadius="100" />
+
+                                <local:TextBlock x:Name="radioCircleText"
+                                                 Foreground="{StaticResource RadioButton.Circle.Foreground.Normal}"
+                                                 HorizontalAlignment="Center"
+                                                 VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+
+                        <ContentPresenter x:Name="contentPresenter"
+                                          Grid.Column="1"
+                                          Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True" />
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="True">
+                            <Setter Property="Padding" Value="4,-1,0,0" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background"  Value="{StaticResource RadioButton.Circle.Background.Hover}" />
+                            <Setter Property="Foreground"  Value="{StaticResource RadioButton.Foreground.Hover}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Circle.Border.Hover}" />
+                            <Setter TargetName="radioCircleText" Property="Foreground" Value="{StaticResource RadioButton.Circle.Foreground.Hover}" />
+                            <Setter TargetName="circle"          Property="Background" Value="{StaticResource RadioButton.Circle.Foreground.Hover}" />
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background"  Value="{StaticResource RadioButton.Circle.Background.Pressed}" />
+                            <Setter Property="Foreground"  Value="{StaticResource RadioButton.Foreground.Pressed}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Circle.Border.Pressed}" />
+                            <Setter TargetName="radioCircleText" Property="Foreground" Value="{StaticResource RadioButton.Circle.Foreground.Pressed}" />
+                            <Setter TargetName="circle"          Property="Background" Value="{StaticResource RadioButton.Circle.Foreground.Pressed}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background"  Value="{StaticResource RadioButton.Circle.Background.Disabled}" />
+                            <Setter Property="Foreground"  Value="{StaticResource RadioButton.Foreground.Disabled}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Circle.Border.Disabled}" />
+                            <Setter TargetName="radioCircleText" Property="Foreground" Value="{StaticResource RadioButton.Circle.Foreground.Disabled}" />
+                            <Setter TargetName="circle"          Property="Background" Value="{StaticResource RadioButton.Circle.Foreground.Disabled}" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Circle.Border.Hover}" />
+                            <Setter TargetName="circle" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="radioCircleText" Property="Text" Value=" " />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="circle" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="radioCircleText" Property="Text" Value=" " />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="radioCircleText" Property="Text"     Value="?" />
+                            <Setter TargetName="radioCircleText" Property="FontSize" Value="14px" />
+                            <Setter TargetName="radioCircleText" Property="Margin"   Value="0 1px 0 0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
