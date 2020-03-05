@@ -24,23 +24,33 @@
         <Setter Property="BorderBrush" Value="{StaticResource ComboBox.ToggleButton.Border.Normal}" />
         <Setter Property="BorderThickness" Value="1" />
 
-        <Setter Property="OverridesDefaultStyle" Value="true"/>
-        <Setter Property="IsTabStop" Value="false"/>
-        <Setter Property="Focusable" Value="false"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Focusable" Value="False"/>
+
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="ClickMode" Value="Press"/>
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ToggleButton}">
 
-                    <Border x:Name="templateRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Background="{TemplateBinding Background}">
-                        <Border x:Name="splitBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1 0 0 0" HorizontalAlignment="Right" Margin="0" Padding="8px 0">
+                    <Border x:Name="templateRoot"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1">
+                        <Border x:Name="splitBorder"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1 0 0 0"
+                                Margin="0"
+                                Padding="8px 0"
+                                HorizontalAlignment="Right">
                             <local:TextBlock x:Name="arrow" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" Text="▼" />
                         </Border>
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
+                        <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background"  TargetName="templateRoot" Value="{StaticResource ComboBox.ToggleButton.Background.Hover}" />
                             <Setter Property="Background"  TargetName="splitBorder"  Value="{StaticResource ComboBox.ToggleButton.Background.Hover}" />
                             <Setter Property="Foreground"  TargetName="arrow"        Value="{StaticResource ComboBox.ToggleButton.Foreground.Hover}" />
@@ -48,7 +58,7 @@
                             <Setter Property="BorderBrush" TargetName="splitBorder"  Value="{StaticResource ComboBox.ToggleButton.Border.Hover}" />
                         </Trigger>
 
-                        <Trigger Property="IsEnabled" Value="false">
+                        <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Background"  TargetName="templateRoot" Value="{StaticResource ComboBox.ToggleButton.Background.Disabled}" />
                             <Setter Property="Background"  TargetName="splitBorder"  Value="{StaticResource ComboBox.ToggleButton.Background.Disabled}" />
                             <Setter Property="Foreground"  TargetName="arrow"        Value="{StaticResource ComboBox.ToggleButton.Foreground.Disabled}" />

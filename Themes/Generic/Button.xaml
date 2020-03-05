@@ -28,23 +28,13 @@
         <Setter Property="BorderBrush" Value="{StaticResource Button.Border.Normal}" />
         <Setter Property="BorderThickness" Value="1px" />
 
-        <Setter Property="FocusVisualStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type local:Button}">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate>
-                                <Border Background="Red" />
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource Main.FocusVisualStyle}" />
 
+        <Setter Property="Padding" Value="8px" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment"   Value="Center" />
-        <Setter Property="Padding" Value="8px" />
 
         <Setter Property="Template">
             <Setter.Value>
@@ -69,13 +59,13 @@
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
+                        <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="border"  Property="Background"             Value="{StaticResource Button.Background.Hover}" />
                             <Setter TargetName="border"  Property="BorderBrush"            Value="{StaticResource Button.Border.Hover}" />
                             <Setter TargetName="content" Property="TextElement.Foreground" Value="{StaticResource Button.Foreground.Hover}" />
                         </Trigger>
 
-                        <Trigger Property="IsPressed" Value="true">
+                        <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border"        Property="Background"             Value="{StaticResource Button.Background.Pressed}" />
                             <Setter TargetName="border"        Property="BorderBrush"            Value="{StaticResource Button.Border.Pressed}" />
                             <Setter TargetName="content"       Property="TextElement.Foreground" Value="{StaticResource Button.Foreground.Pressed}" />
@@ -83,7 +73,7 @@
                             <Setter TargetName="contentBorder" Property="Margin"                 Value="0 0 -1 -1" />
                         </Trigger>
 
-                        <Trigger Property="IsEnabled" Value="false">
+                        <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="border"  Property="Background"             Value="{StaticResource Button.Background.Disabled}" />
                             <Setter TargetName="border"  Property="BorderBrush"            Value="{StaticResource Button.Border.Disabled}" />
                             <Setter TargetName="content" Property="TextElement.Foreground" Value="{StaticResource Button.Foreground.Disabled}" />

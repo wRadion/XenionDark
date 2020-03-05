@@ -17,6 +17,8 @@
             </Setter.Value>
         </Setter>
 
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Window}">
@@ -43,7 +45,9 @@
 
                                 <!-- Main Content -->
                                 <Border Background="{StaticResource MainContent.Background}">
-                                    <ContentPresenter Content="{TemplateBinding Content}" />
+                                    <AdornerDecorator>
+                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                    </AdornerDecorator>
                                 </Border>
 
                             </DockPanel>
