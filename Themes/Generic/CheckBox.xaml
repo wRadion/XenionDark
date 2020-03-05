@@ -6,23 +6,6 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF" />
-    <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070" />
-
-    <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF" />
-    <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF" />
-    <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121" />
-
-    <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6" />
-    <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC" />
-    <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070" />
-
-    <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF" />
-    <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD" />
-    <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121" />
-
-    <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121" />
-
     <SolidColorBrush x:Key="CheckBox.Box.Background.Normal"   Color="{StaticResource Dark.Light}"  Opacity="1" />
     <SolidColorBrush x:Key="CheckBox.Foreground.Normal"       Color="{StaticResource Light.Main}"  Opacity="1" />
     <SolidColorBrush x:Key="CheckBox.Box.Foreground.Normal"   Color="{StaticResource Light.Dark}"  Opacity="1" />
@@ -134,7 +117,8 @@
 
                         <Trigger Property="IsChecked" Value="{x:Null}">
                             <Setter TargetName="checkBoxText" Property="Text"     Value="?" />
-                            <Setter TargetName="checkBoxText" Property="FontSize" Value="20px" />
+                            <Setter TargetName="checkBoxText" Property="FontSize" Value="18px" />
+                            <Setter TargetName="checkBoxText" Property="Margin"   Value="0 1px 0 0" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
