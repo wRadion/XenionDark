@@ -6,21 +6,21 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="Button.Background.Normal"   Color="{StaticResource Primary.Light}"   Opacity="1" />
-    <SolidColorBrush x:Key="Button.Foreground.Normal"   Color="{StaticResource Secondary.Main}"  Opacity="1" />
-    <SolidColorBrush x:Key="Button.Border.Normal"       Color="{StaticResource Primary.Dark}"    Opacity="1" />
+    <SolidColorBrush x:Key="Button.Background.Normal"   Color="{StaticResource Dark.Light}"  Opacity="1" />
+    <SolidColorBrush x:Key="Button.Foreground.Normal"   Color="{StaticResource Light.Main}"  Opacity="1" />
+    <SolidColorBrush x:Key="Button.Border.Normal"       Color="{StaticResource Dark.Dark}"   Opacity="1" />
 
-    <SolidColorBrush x:Key="Button.Background.Hover"    Color="White"                            Opacity="0.1" />
-    <SolidColorBrush x:Key="Button.Foreground.Hover"    Color="{StaticResource Secondary.Light}" Opacity="1" />
-    <SolidColorBrush x:Key="Button.Border.Hover"        Color="{StaticResource Medium}"          Opacity="1" />
+    <SolidColorBrush x:Key="Button.Background.Hover"    Color="White"                        Opacity="0.1" />
+    <SolidColorBrush x:Key="Button.Foreground.Hover"    Color="{StaticResource Light.Light}" Opacity="1" />
+    <SolidColorBrush x:Key="Button.Border.Hover"        Color="{StaticResource Medium}"      Opacity="1" />
 
-    <SolidColorBrush x:Key="Button.Background.Pressed"  Color="{StaticResource Primary.Dark}"    Opacity="1" />
-    <SolidColorBrush x:Key="Button.Foreground.Pressed"  Color="{StaticResource Secondary.Dark}"  Opacity="1" />
-    <SolidColorBrush x:Key="Button.Border.Pressed"      Color="{StaticResource Primary.Light}"   Opacity="1" />
+    <SolidColorBrush x:Key="Button.Background.Pressed"  Color="{StaticResource Dark.Dark}"   Opacity="1" />
+    <SolidColorBrush x:Key="Button.Foreground.Pressed"  Color="{StaticResource Light.Dark}"  Opacity="1" />
+    <SolidColorBrush x:Key="Button.Border.Pressed"      Color="{StaticResource Dark.Light}"  Opacity="1" />
 
-    <SolidColorBrush x:Key="Button.Background.Disabled" Color="{StaticResource Primary.Dark}"    Opacity="1" />
-    <SolidColorBrush x:Key="Button.Foreground.Disabled" Color="{StaticResource Medium}"          Opacity="1" />
-    <SolidColorBrush x:Key="Button.Border.Disabled"     Color="{StaticResource Primary.Light}"   Opacity="1" />
+    <SolidColorBrush x:Key="Button.Background.Disabled" Color="{StaticResource Dark.Dark}"   Opacity="1" />
+    <SolidColorBrush x:Key="Button.Foreground.Disabled" Color="{StaticResource Medium}"      Opacity="1" />
+    <SolidColorBrush x:Key="Button.Border.Disabled"     Color="{StaticResource Dark.Light}"  Opacity="1" />
 
     <Style TargetType="{x:Type local:Button}">
         <Setter Property="Background"  Value="{StaticResource Button.Background.Normal}" />
@@ -28,10 +28,14 @@
         <Setter Property="BorderBrush" Value="{StaticResource Button.Border.Normal}" />
         <Setter Property="BorderThickness" Value="1px" />
 
+        <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
+        <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />
+
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Focusable"        Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource Main.FocusVisualStyle}" />
 
+        <Setter Property="Margin"  Value="0" />
         <Setter Property="Padding" Value="8px" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment"   Value="Center" />

@@ -1,15 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <Color x:Key="Primary.Dark"    R="8"   G="8"   B="8"   A="255" /> <!-- #080808 -->
-    <Color x:Key="Primary.TextBox" R="12"  G="12"  B="12"  A="255" /> <!-- #0C0C0C -->
-    <Color x:Key="Primary.Main"    R="16"  G="16"  B="16"  A="255" /> <!-- #101010 -->
-    <Color x:Key="Primary.Light"   R="24"  G="24"  B="24"  A="255" /> <!-- #181818 -->
-    <Color x:Key="Medium"          R="96"  G="96"  B="96"  A="255" /> <!-- #606060 -->
-    <Color x:Key="Secondary.Dark"  R="164" G="164" B="164" A="255" /> <!-- #A4A4A4 -->
-    <Color x:Key="Secondary.Main"  R="192" G="192" B="192" A="255" /> <!-- #C0C0C0 -->
-    <Color x:Key="Secondary.Light" R="224" G="224" B="224" A="255" /> <!-- #E0E0E0 -->
-    <Color x:Key="Red.Main"        R="196" G="32"  B="32"  A="255" /> <!-- #C02020 -->
+    <Color x:Key="Dark.Dark"    R="8"   G="8"   B="8"   A="255" /> <!-- #080808 -->
+    <Color x:Key="Dark.TextBox" R="12"  G="12"  B="12"  A="255" /> <!-- #0C0C0C -->
+    <Color x:Key="Dark.Main"    R="16"  G="16"  B="16"  A="255" /> <!-- #101010 -->
+    <Color x:Key="Dark.Light"   R="24"  G="24"  B="24"  A="255" /> <!-- #181818 -->
+    <Color x:Key="Medium"       R="96"  G="96"  B="96"  A="255" /> <!-- #606060 -->
+    <Color x:Key="Light.Dark"   R="164" G="164" B="164" A="255" /> <!-- #A4A4A4 -->
+    <Color x:Key="Light.Main"   R="192" G="192" B="192" A="255" /> <!-- #C0C0C0 -->
+    <Color x:Key="Light.Light"  R="224" G="224" B="224" A="255" /> <!-- #E0E0E0 -->
+    <Color x:Key="Red.Main"     R="196" G="32"  B="32"  A="255" /> <!-- #C02020 -->
+
+    <FontFamily x:Key="Main.FontFamily">Comic Sans MS</FontFamily>
+    <sys:Double x:Key="Main.FontSize">24</sys:Double>
 
     <SolidColorBrush x:Key="Focus.Border" Color="White" Opacity="0.33" />
     <Style x:Key="Main.FocusVisualStyle">

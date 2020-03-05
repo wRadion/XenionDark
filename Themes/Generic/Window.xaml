@@ -7,7 +7,7 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="MainContent.Background" Color="{StaticResource Primary.Main}" />
+    <SolidColorBrush x:Key="MainContent.Background" Color="{StaticResource Dark.Main}" />
 
     <Style TargetType="{x:Type local:Window}">
         <Setter Property="WindowStyle" Value="ThreeDBorderWindow" />

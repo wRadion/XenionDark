@@ -6,13 +6,19 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="TextBlock.Foreground" Color="{StaticResource Secondary.Main}" />
+    <SolidColorBrush x:Key="TextBlock.Foreground" Color="{StaticResource Light.Main}" />
 
     <Style TargetType="{x:Type local:TextBlock}">
         <Setter Property="Foreground" Value="{StaticResource TextBlock.Foreground}" />
 
+        <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
+        <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />
+
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Focusable" Value="False" />
+
+        <Setter Property="Margin"  Value="0" />
+        <Setter Property="Padding" Value="0" />
     </Style>
 
 </ResourceDictionary>
