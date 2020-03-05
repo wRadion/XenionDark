@@ -63,6 +63,10 @@
                             <Setter TargetName="border"          Property="Padding" Value="8px" />
                             <Setter TargetName="borderMaximized" Property="Padding" Value="{Binding MaximizedBorderThickness, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                         </Trigger>
+
+                        <Trigger Property="SizeToContent" Value="WidthAndHeight">
+                            <Setter TargetName="border" Property="Margin" Value="-1px" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
 
                 </ControlTemplate>

@@ -8,7 +8,7 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/TextBox.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ComboBoxItem.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ComboBox.xaml" />
-        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Menu.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/CheckBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

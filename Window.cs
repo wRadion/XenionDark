@@ -49,8 +49,20 @@ namespace XenionDark
             base.EndInit();
         }
 
+        private bool CanResize()
+        {
+            if (WindowStyle == WindowStyle.ToolWindow) return false;
+            if (ResizeMode == ResizeMode.NoResize) return false;
+            if (ResizeMode == ResizeMode.CanMinimize) return false;
+            if (SizeToContent != SizeToContent.Manual) return false;
+
+            return true;
+        }
+
         private void UpdateMaxHeight(MaximizedWindowType type)
         {
+            if (!CanResize()) return;
+
             if (type == MaximizedWindowType.Default)
                 MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight - 2;
             else if (type == MaximizedWindowType.Fullscreen)
@@ -59,6 +71,8 @@ namespace XenionDark
 
         private void ToggleMaximizedWindowType()
         {
+            if (!CanResize()) return;
+
             if (MaximizedWindowType == MaximizedWindowType.Default)
                 MaximizedWindowType = MaximizedWindowType.Fullscreen;
             else
@@ -67,6 +81,8 @@ namespace XenionDark
 
         public void ToggleFullscreen()
         {
+            if (!CanResize()) return;
+
             if (WindowState == WindowState.Maximized)
             {
                 ToggleMaximizedWindowType();

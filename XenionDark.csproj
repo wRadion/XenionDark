@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="CheckBox.cs" />
     <Compile Include="ComboBox.cs" />
     <Compile Include="ComboBoxItem.cs" />
     <Compile Include="Controls\TitleBar.xaml.cs">
@@ -57,7 +58,6 @@
     <Compile Include="Menu.cs" />
     <Compile Include="TextBlock.cs" />
     <Compile Include="TextBox.cs" />
-    <Compile Include="ToggleButton.cs" />
     <Compile Include="Window.cs" />
     <Page Include="Controls\TitleBar.xaml">
       <SubType>Designer</SubType>
@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Generic\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic\CheckBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -84,10 +88,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Generic\TextBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Generic\ToggleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

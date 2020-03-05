@@ -12,8 +12,8 @@
     <Color x:Key="Light.Light"  R="224" G="224" B="224" A="255" /> <!-- #E0E0E0 -->
     <Color x:Key="Red.Main"     R="196" G="32"  B="32"  A="255" /> <!-- #C02020 -->
 
-    <FontFamily x:Key="Main.FontFamily">Comic Sans MS</FontFamily>
-    <sys:Double x:Key="Main.FontSize">24</sys:Double>
+    <FontFamily x:Key="Main.FontFamily">Sergoe UI</FontFamily>
+    <sys:Double x:Key="Main.FontSize">14</sys:Double>
 
     <SolidColorBrush x:Key="Focus.Border" Color="White" Opacity="0.33" />
     <Style x:Key="Main.FocusVisualStyle">

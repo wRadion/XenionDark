@@ -43,14 +43,18 @@
                             </Border>
 
                             <ControlTemplate.Triggers>
-                                <Trigger Property="IsMouseOver" Value="true">
+                                <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="border"  Property="Background" Value="{Binding Foreground, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                     <Setter TargetName="content" Property="Opacity"    Value="1" />
                                 </Trigger>
 
-                                <Trigger Property="IsPressed" Value="true">
+                                <Trigger Property="IsPressed" Value="True">
                                     <Setter TargetName="border"  Property="Background" Value="{StaticResource Button.Background.Pressed}"/>
                                     <Setter TargetName="content" Property="Opacity"    Value="0.5" />
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="content" Property="Opacity" Value="0.25" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
 
@@ -61,7 +65,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid Background="{StaticResource TitleBar.Background}" MouseLeftButtonDown="DragBar_MouseLeftButtonDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="40px" />
@@ -69,9 +73,7 @@
             <ColumnDefinition Width="40px" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0"
-              Background="{StaticResource TitleBar.Background}"
-              MouseLeftButtonDown="DragBar_MouseLeftButtonDown">
+        <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="32px" />
                 <ColumnDefinition Width="*" />
@@ -85,11 +87,11 @@
                              Text="{Binding Title, ElementName=this_TitleBar}" />
         </Grid>
 
-        <Button Grid.Column="1" Click="Minimize_Click">
+        <Button x:Name="BtnMinimize" Grid.Column="1" Click="Minimize_Click">
             <Image Source="/XenionDark;component/Themes/Generic/Resources/Images/Window/minimize_icon.png" />
         </Button>
 
-        <Button Grid.Column="2" Click="Maximize_Click">
+        <Button x:Name="BtnMaximize" Grid.Column="2" Click="Maximize_Click">
             <Image x:Name="Maximize" />
         </Button>
 

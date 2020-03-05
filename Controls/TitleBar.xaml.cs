@@ -52,6 +52,16 @@ namespace XenionDark.Controls
             {
                 Window.StateChanged += Window_StateChanged;
                 Window_StateChanged(this, new EventArgs());
+
+                if (Window.ResizeMode == ResizeMode.NoResize)
+                {
+                    BtnMinimize.Visibility = Visibility.Hidden;
+                    BtnMaximize.Visibility = Visibility.Hidden;
+                }
+                else if (Window.ResizeMode == ResizeMode.CanMinimize)
+                {
+                    BtnMaximize.IsEnabled = false;
+                }
             }
 
             base.EndInit();
@@ -80,7 +90,7 @@ namespace XenionDark.Controls
         private void Close_Click(object sender, RoutedEventArgs e) => CloseWindow();
         private void DragBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ClickCount % 2 == 0)
+            if (e.ClickCount % 2 == 0 && BtnMaximize.IsEnabled && BtnMaximize.Visibility == Visibility.Visible)
                 MaximizeWindow();
             else
                 Window.DragMove();

@@ -9,6 +9,7 @@
     <SolidColorBrush x:Key="TextBlock.Foreground" Color="{StaticResource Light.Main}" />
 
     <Style TargetType="{x:Type local:TextBlock}">
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource TextBlock.Foreground}" />
 
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
