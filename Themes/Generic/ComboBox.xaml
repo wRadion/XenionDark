@@ -7,39 +7,30 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/TextBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="ComboBox.Background.Normal"   Color="{StaticResource Dark.Light}"  Opacity="1" />
-    <SolidColorBrush x:Key="ComboBox.Foreground.Normal"   Color="{StaticResource Light.Main}"  Opacity="1" />
-    <SolidColorBrush x:Key="ComboBox.Border.Normal"       Color="{StaticResource Dark.Dark}"   Opacity="1" />
-
-    <SolidColorBrush x:Key="ComboBox.Background.Hover"    Color="White"                        Opacity="0.1" />
-    <SolidColorBrush x:Key="ComboBox.Foreground.Hover"    Color="{StaticResource Light.Light}" Opacity="1" />
-    <SolidColorBrush x:Key="ComboBox.Border.Hover"        Color="{StaticResource Medium}"      Opacity="1" />
-
-    <SolidColorBrush x:Key="ComboBox.Background.Disabled" Color="{StaticResource Dark.Dark}"   Opacity="1" />
-    <SolidColorBrush x:Key="ComboBox.Foreground.Disabled" Color="{StaticResource Medium}"      Opacity="1" />
-    <SolidColorBrush x:Key="ComboBox.Border.Disabled"     Color="{StaticResource Dark.Light}"  Opacity="1" />
-
-    <SolidColorBrush x:Key="ComboBox.ToggleButton.Background.Normal" Color="White" Opacity="0.05" />
-    <SolidColorBrush x:Key="ComboBox.DropDown.Border.Normal" Color="{StaticResource Medium}" Opacity="1" />
-
     <Style x:Key="ComboBox.ToggleButton" TargetType="{x:Type ToggleButton}">
-        <Setter Property="Background"  Value="{StaticResource ComboBox.ToggleButton.Background.Normal}" />
-        <Setter Property="Foreground"  Value="{StaticResource ComboBox.Foreground.Normal}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Border.Normal}" />
+        <Setter Property="Background"  Value="{StaticResource Out.Background.Normal}" />
+        <Setter Property="Foreground"  Value="{StaticResource Foreground.Normal}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Border.Normal}" />
+
         <Setter Property="FontFamily"  Value="{StaticResource Main.FontFamily}" />
         <Setter Property="FontSize"    Value="{StaticResource Main.FontSize}" />
 
-        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Focusable"        Value="False"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+
+        <Setter Property="Margin"  Value="0" />
         <Setter Property="Padding" Value="8px" />
+
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="ClickMode" Value="Press"/>
     </Style>
 
     <Style TargetType="{x:Type local:ComboBox}">
-        <Setter Property="Background"  Value="{StaticResource ComboBox.Background.Normal}" />
-        <Setter Property="Foreground"  Value="{StaticResource ComboBox.Foreground.Normal}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Border.Normal}" />
+        <Setter Property="Background"  Value="{StaticResource Out.Background.Normal}" />
+        <Setter Property="Foreground"  Value="{StaticResource Foreground.Normal}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Border.Normal}" />
         <Setter Property="BorderThickness" Value="1" />
 
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
@@ -73,7 +64,7 @@
 
                             <!-- ToggleButton -->
                             <Border Grid.Column="1"
-                                    Background="{StaticResource ComboBox.ToggleButton.Background.Normal}"
+                                    Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="1 0 0 0"
                                     Padding="8px 4px"
@@ -99,17 +90,18 @@
                                 </ToggleButton.Style>
                             </ToggleButton>
 
-
                             <!-- Text -->
                             <ContentPresenter x:Name="contentPresenter"
                                               Grid.Column="0"
                                               VerticalAlignment="Center"
                                               TextElement.Foreground="{TemplateBinding Foreground}"
+                                              TextElement.FontFamily="{TemplateBinding FontFamily}"
+                                              TextElement.FontSize="{TemplateBinding FontSize}"
                                               ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                               Content="{TemplateBinding SelectionBoxItem}"
                                               ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
-                                              IsHitTestVisible="false"
+                                              IsHitTestVisible="False"
                                               Margin="8px 0" />
 
                             <!-- Editable TextBox -->
@@ -132,8 +124,8 @@
                                 <Border MinWidth="{Binding ActualWidth, ElementName=templateRoot}"
                                         MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border x:Name="dropDownBorder"
-                                            Background="{TemplateBinding Background}"
-                                            BorderBrush="{StaticResource ComboBox.DropDown.Border.Normal}"
+                                            Background="{StaticResource Out.Background.Normal}"
+                                            BorderBrush="{StaticResource Border.Hover}"
                                             BorderThickness="{TemplateBinding BorderThickness}">
                                         <local:ScrollViewer x:Name="DropDownScrollViewer">
                                             <Grid RenderOptions.ClearTypeHint="Enabled">
@@ -157,21 +149,27 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="PART_EditableTextBox" Property="BorderBrush" Value="{StaticResource ComboBox.Border.Hover}" />
-                            <Setter Property="Background"  Value="{StaticResource ComboBox.Background.Hover}" />
-                            <Setter Property="Foreground"  Value="{StaticResource ComboBox.Foreground.Hover}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Border.Hover}" />
+                            <Setter TargetName="PART_EditableTextBox"
+                                    Property="BorderBrush" Value="{StaticResource Border.Hover}" />
+                            <Setter Property="Background"  Value="{StaticResource Out.Background.Hover}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Hover}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Border.Hover}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background"  Value="{StaticResource ComboBox.Background.Disabled}" />
-                            <Setter Property="Foreground"  Value="{StaticResource ComboBox.Foreground.Disabled}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ComboBox.Border.Disabled}" />
+                            <Setter Property="Background"  Value="{StaticResource Background.Disabled}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Disabled}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Border.Disabled}" />
                         </Trigger>
 
                         <Trigger Property="IsEditable" Value="True">
                             <Setter TargetName="contentPresenter" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="editableTextBox"  Property="Visibility" Value="Visible" />
+                        </Trigger>
+
+                        <Trigger Property="IsEditable" Value="False">
+                            <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="editableTextBox"  Property="Visibility" Value="Collapsed" />
                         </Trigger>
 
                         <Trigger Property="HasItems" Value="False">

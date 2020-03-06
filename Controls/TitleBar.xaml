@@ -12,12 +12,12 @@
                 <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <SolidColorBrush x:Key="TitleBar.Background"        Color="{StaticResource Dark.Dark}" Opacity="1" />
-            <SolidColorBrush x:Key="Button.Background.Normal"   Color="{StaticResource Dark.Dark}" Opacity="1" />
-            <SolidColorBrush x:Key="Button.Background.Hover"    Color="{StaticResource Dark.Main}" Opacity="1" />
-            <SolidColorBrush x:Key="Button.Background.Pressed"  Color="Black"                      Opacity="1" />
-            <SolidColorBrush x:Key="Button.Background.Disabled" Color="{StaticResource Dark.Dark}" Opacity="1" />
-            <SolidColorBrush x:Key="Button.Background.Red"      Color="{StaticResource Red.Main}"  Opacity="1" />
+            <SolidColorBrush x:Key="TitleBar.Background"        Color="{StaticResource Dark.Darkest}" Opacity="1" />
+            <SolidColorBrush x:Key="Button.Background.Normal"   Color="{StaticResource Dark.Darkest}" Opacity="1" />
+            <SolidColorBrush x:Key="Button.Background.Hover"    Color="{StaticResource Dark.Main}"    Opacity="1" />
+            <SolidColorBrush x:Key="Button.Background.Pressed"  Color="Black"                         Opacity="1" />
+            <SolidColorBrush x:Key="Button.Background.Disabled" Color="{StaticResource Dark.Darkest}" Opacity="1" />
+            <SolidColorBrush x:Key="Button.Background.Red"      Color="{StaticResource Red.Main}"     Opacity="1" />
 
             <Style TargetType="{x:Type Button}">
                 <Setter Property="Background"  Value="{StaticResource Button.Background.Normal}" />
@@ -25,6 +25,7 @@
                 <Setter Property="BorderBrush" Value="Transparent" />
                 <Setter Property="BorderThickness" Value="0" />
 
+                <Setter Property="SnapsToDevicePixels" Value="True" />
                 <Setter Property="Focusable"        Value="False" />
                 <Setter Property="FocusVisualStyle" Value="{x:Null}" />
 

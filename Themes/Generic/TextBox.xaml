@@ -6,24 +6,10 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="TextBox.Background.Normal"   Color="{StaticResource Dark.TextBox}" Opacity="1" />
-    <SolidColorBrush x:Key="TextBox.Foreground.Normal"   Color="{StaticResource Light.Main}"   Opacity="1" />
-    <SolidColorBrush x:Key="TextBox.Border.Normal"       Color="{StaticResource Dark.Dark}"    Opacity="1" />
-
-    <SolidColorBrush x:Key="TextBox.Background.Hover"    Color="{StaticResource Dark.TextBox}" Opacity="1" />
-    <SolidColorBrush x:Key="TextBox.Foreground.Hover"    Color="{StaticResource Light.Main}"   Opacity="1" />
-    <SolidColorBrush x:Key="TextBox.Border.Hover"        Color="{StaticResource Medium}"       Opacity="1" />
-
-    <SolidColorBrush x:Key="TextBox.Background.Disabled" Color="{StaticResource Dark.Dark}"    Opacity="1" />
-    <SolidColorBrush x:Key="TextBox.Foreground.Disabled" Color="{StaticResource Medium}"       Opacity="1" />
-    <SolidColorBrush x:Key="TextBox.Border.Disabled"     Color="{StaticResource Dark.Light}"   Opacity="1" />
-
-    <SolidColorBrush x:Key="TextBox.Border.Focused"      Color="{StaticResource Medium}"       Opacity="1" />
-
     <Style TargetType="{x:Type local:TextBox}">
-        <Setter Property="Background"      Value="{StaticResource TextBox.Background.Normal}" />
-        <Setter Property="Foreground"      Value="{StaticResource TextBox.Foreground.Normal}" />
-        <Setter Property="BorderBrush"     Value="{StaticResource TextBox.Border.Normal}" />
+        <Setter Property="Background"      Value="{StaticResource In.Background.Normal}" />
+        <Setter Property="Foreground"      Value="{StaticResource Foreground.Normal}" />
+        <Setter Property="BorderBrush"     Value="{StaticResource Border.Normal}" />
         <Setter Property="BorderThickness" Value="1" />
 
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
@@ -36,7 +22,7 @@
         <Setter Property="Margin"  Value="0" />
         <Setter Property="Padding" Value="2px 4px" />
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment"   Value="Center" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
@@ -50,7 +36,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}">
-                        <ScrollViewer x:Name="PART_ContentHost"
+                        <local:ScrollViewer x:Name="PART_ContentHost"
                                       Foreground="{TemplateBinding Foreground}"
                                       Focusable="False"
                                       HorizontalScrollBarVisibility="Hidden"
@@ -58,19 +44,14 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background"  Value="{StaticResource TextBox.Background.Hover}" />
-                            <Setter Property="Foreground"  Value="{StaticResource TextBox.Foreground.Hover}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Border.Hover}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Hover}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Border.Hover}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background"  Value="{StaticResource TextBox.Background.Disabled}" />
-                            <Setter Property="Foreground"  Value="{StaticResource TextBox.Foreground.Disabled}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Border.Disabled}" />
-                        </Trigger>
-
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Border.Focused}" />
+                            <Setter Property="Background"  Value="{StaticResource Background.Disabled}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Disabled}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource Border.Disabled}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -88,8 +69,6 @@
     </Style>
 
     <Style x:Key="ComboBoxEditableTextBox" TargetType="{x:Type local:TextBox}" BasedOn="{StaticResource {x:Type local:TextBox}}">
-        <Setter Property="BorderThickness" Value="1" />
-
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="AllowDrop" Value="True" />
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />

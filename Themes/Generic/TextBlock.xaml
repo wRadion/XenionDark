@@ -6,11 +6,9 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="TextBlock.Foreground" Color="{StaticResource Light.Main}" />
-
     <Style TargetType="{x:Type local:TextBlock}">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource TextBlock.Foreground}" />
+        <Setter Property="Foreground" Value="{StaticResource Foreground.Normal}" />
 
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
         <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />

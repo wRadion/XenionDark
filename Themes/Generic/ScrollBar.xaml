@@ -7,31 +7,17 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="Button.Background.Normal"   Color="{StaticResource Dark.Light}"  Opacity="1" />
-    <SolidColorBrush x:Key="Button.Foreground.Normal"   Color="{StaticResource Light.Main}"  Opacity="1" />
-
-    <SolidColorBrush x:Key="Button.Background.Hover"    Color="White"                        Opacity="0.1" />
-    <SolidColorBrush x:Key="Button.Foreground.Hover"    Color="{StaticResource Light.Light}" Opacity="1" />
-
-    <SolidColorBrush x:Key="Button.Background.Pressed"  Color="{StaticResource Dark.Main}"   Opacity="1" />
-    <SolidColorBrush x:Key="Button.Foreground.Pressed"  Color="{StaticResource Light.Dark}"  Opacity="1" />
-
-    <SolidColorBrush x:Key="Button.Background.Disabled" Color="{StaticResource Dark.Dark}"   Opacity="1" />
-    <SolidColorBrush x:Key="Button.Foreground.Disabled" Color="{StaticResource Medium}"      Opacity="1" />
-
-    <SolidColorBrush x:Key="ScrollBar.Background.Normal"   Color="{StaticResource Dark.TextBox}" Opacity="1" />
-    <SolidColorBrush x:Key="ScrollBar.Background.Disabled" Color="{StaticResource Dark.Dark}"    Opacity="1" />
-
     <sys:Double x:Key="ScrollBar.Size">24</sys:Double>
 
     <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
-        <Setter Property="Background"  Value="{StaticResource Button.Background.Normal}" />
-        <Setter Property="Foreground"  Value="{StaticResource Button.Foreground.Normal}" />
+        <Setter Property="Background"  Value="{StaticResource Out.Background.Normal}" />
+        <Setter Property="Foreground"  Value="{StaticResource Foreground.Normal}" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
 
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Focusable" Value="False" />
+
         <Setter Property="OverridesDefaultStyle" Value="True" />
 
         <Setter Property="Template">
@@ -51,18 +37,18 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background"  Value="{StaticResource Button.Background.Hover}" />
-                            <Setter Property="Foreground"  Value="{StaticResource Button.Foreground.Hover}" />
+                            <Setter Property="Background"  Value="{StaticResource Out.Background.Hover}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Hover}" />
                         </Trigger>
 
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background"  Value="{StaticResource Button.Background.Pressed}" />
-                            <Setter Property="Foreground"  Value="{StaticResource Button.Foreground.Pressed}" />
+                            <Setter Property="Background"  Value="{StaticResource Out.Background.Pressed}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Pressed}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background"  Value="{StaticResource Button.Background.Disabled}" />
-                            <Setter Property="Foreground"  Value="{StaticResource Button.Foreground.Disabled}" />
+                            <Setter Property="Background"  Value="{StaticResource Background.Disabled}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Disabled}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
 
@@ -72,7 +58,7 @@
     </Style>
 
     <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
-        <Setter Property="Background" Value="{StaticResource ScrollBar.Background.Normal}" />
+        <Setter Property="Background" Value="{StaticResource Background.Disabled}" />
 
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Focusable" Value="False" />
@@ -90,7 +76,7 @@
     </Style>
 
     <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
-        <Setter Property="Background"  Value="{StaticResource Button.Background.Normal}" />
+        <Setter Property="Background"  Value="{StaticResource Out.Background.Normal}" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
 
@@ -110,11 +96,11 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{StaticResource Button.Background.Hover}" />
+                            <Setter Property="Background" Value="{StaticResource Out.Background.Hover}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{StaticResource Button.Background.Disabled}" />
+                            <Setter Property="Background" Value="{StaticResource Background.Disabled}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -130,7 +116,7 @@
                 <RowDefinition MaxHeight="{StaticResource ScrollBar.Size}" />
             </Grid.RowDefinitions>
 
-            <Border Grid.RowSpan="3" Background="{StaticResource ScrollBar.Background.Normal}" />
+            <Border Grid.RowSpan="3" Background="{StaticResource Background.Disabled}" />
 
             <RepeatButton Grid.Row="0"
                           Style="{StaticResource ScrollBarLineButton}"
@@ -168,7 +154,7 @@
                 <ColumnDefinition MaxWidth="{StaticResource ScrollBar.Size}" />
             </Grid.ColumnDefinitions>
 
-            <Border Grid.ColumnSpan="3" Background="{StaticResource ScrollBar.Background.Normal}" />
+            <Border Grid.ColumnSpan="3" Background="{StaticResource Background.Disabled}" />
 
             <RepeatButton Grid.Column="0"
                   Style="{StaticResource ScrollBarLineButton}"

@@ -6,8 +6,6 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="ScrollViewer.Background.Normal" Color="{StaticResource Dark.Main}" Opacity="1" />
-
     <Style TargetType="{x:Type local:ScrollViewer}">
         <Setter Property="Template">
             <Setter.Value>
@@ -24,7 +22,7 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <Rectangle Grid.Column="1" Grid.Row="1" Fill="{StaticResource ScrollViewer.Background.Normal}" />
+                        <Rectangle Grid.Column="1" Grid.Row="1" Fill="{StaticResource In.Background.Normal}" />
 
                         <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
                                                 Grid.Column="0"

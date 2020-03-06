@@ -6,39 +6,23 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="ListBoxItem.Background.Normal"   Color="Transparent"                  Opacity="1" />
-    <SolidColorBrush x:Key="ListBoxItem.Foreground.Normal"   Color="{StaticResource Light.Main}"  Opacity="1" />
-    <SolidColorBrush x:Key="ListBoxItem.Border.Normal"       Color="Transparent"                  Opacity="1" />
-
-    <SolidColorBrush x:Key="ListBoxItem.Background.Hover"    Color="White"                        Opacity="0.1" />
-    <SolidColorBrush x:Key="ListBoxItem.Foreground.Hover"    Color="{StaticResource Light.Light}" Opacity="1" />
-    <SolidColorBrush x:Key="ListBoxItem.Border.Hover"        Color="Transparent"                  Opacity="1" />
-
-    <SolidColorBrush x:Key="ListBoxItem.Background.Disabled" Color="Transparent"                  Opacity="1" />
-    <SolidColorBrush x:Key="ListBoxItem.Foreground.Disabled" Color="{StaticResource Medium}"      Opacity="1" />
-    <SolidColorBrush x:Key="ListBoxItem.Border.Disabled"     Color="Transparent"                  Opacity="1" />
-
-    <SolidColorBrush x:Key="ListBoxItem.Background.Selected" Color="{StaticResource Medium}"      Opacity="1" />
-    <SolidColorBrush x:Key="ListBoxItem.Foreground.Selected" Color="{StaticResource Dark.Dark}"   Opacity="1" />
-    <SolidColorBrush x:Key="ListBoxItem.Border.Selected"     Color="Transparent"                  Opacity="1" />
-
     <Style TargetType="{x:Type local:ListBoxItem}">
-        <Setter Property="Background"  Value="{StaticResource ListBoxItem.Background.Normal}" />
-        <Setter Property="Foreground"  Value="{StaticResource ListBoxItem.Foreground.Normal}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ListBoxItem.Border.Normal}" />
+        <Setter Property="Background"  Value="Transparent" />
+        <Setter Property="Foreground"  Value="{StaticResource Foreground.Normal}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
 
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
         <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />
 
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Focusable"        Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
 
         <Setter Property="Margin"  Value="0" />
         <Setter Property="Padding" Value="12px 6px" />
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
-        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment"   Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
 
         <Setter Property="Template">
             <Setter.Value>
@@ -55,22 +39,31 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background"  Value="{StaticResource ListBoxItem.Background.Hover}" />
-                            <Setter Property="Foreground"  Value="{StaticResource ListBoxItem.Foreground.Hover}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ListBoxItem.Border.Hover}" />
+                            <Setter Property="Background"  Value="{StaticResource In.Background.Hover}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Hover}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background"  Value="{StaticResource ListBoxItem.Background.Disabled}" />
-                            <Setter Property="Foreground"  Value="{StaticResource ListBoxItem.Foreground.Disabled}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ListBoxItem.Border.Disabled}" />
+                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Disabled}" />
                         </Trigger>
 
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background"  Value="{StaticResource ListBoxItem.Background.Selected}" />
-                            <Setter Property="Foreground"  Value="{StaticResource ListBoxItem.Foreground.Selected}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ListBoxItem.Border.Selected}" />
-                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="True" />
+                                <Condition Property="IsSelected" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"  Value="{StaticResource In.Background.Selected}" />
+                            <Setter Property="Foreground"  Value="{StaticResource In.Foreground.Selected}" />
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False" />
+                                <Condition Property="IsSelected" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"  Value="{StaticResource In.Background.Hover}" />
+                            <!--<Setter Property="Foreground"  Value="{StaticResource Background.Disabled}" />-->
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
