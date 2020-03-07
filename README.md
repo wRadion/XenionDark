@@ -7,8 +7,8 @@ A dark theme for WPF applications.
 3. [How to use](#how-to-use)
    1. [Main Window](#main-window)
    2. [Basic Controls](#basic-controls)
-4. [Issues, bugs, suggestions](#issues-bugs-suggestions)
-
+4. [Roadmap](#roadmap)
+5. [Issues, bugs, suggestions](#issues-bugs-suggestions)
 
 ## Preview
 
@@ -124,6 +124,42 @@ The current XenionDark version has the following controls implemented:
 
 All the custom controls inherit the basic Windows control. So you can
 use any properties you want as if the control was the default one.
+
+## Roadmap
+
+Here is some controls that I plan to do in the future:
+
+- Calendar
+    - CalendarButton
+    - CalendarDayButton
+    - CalendarItem
+- DatePicker
+  - DatePickerTextBox
+- GroupBox
+- ListView
+  - ListViewItem
+- PasswordBox
+- ProgressBar
+- RichTextBox
+- Slider
+  - TickBar?
+  - RepeatButton?
+  - Track?
+  - Thumb?
+- StatusBar
+  - StatusBarItem
+- TabControl
+  - TabItem
+  - TabPanel
+- ToggleButton (already have Switch)
+- ToolBar
+  - ToolBarPanel
+  - ToolBarTray
+- TreeView 
+  - TreeViewItem
+
+I also plan to make this theme customizable (the colors for example)
+and some other stuff. Hope you'll like it!
 
 ## Issues, bugs, suggestions
 
