@@ -80,7 +80,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ContentPresenter Grid.Column="0" 
+            <ContentPresenter Grid.Column="0"
                               HorizontalAlignment="Center"
                               Content="{Binding Icon, ElementName=this_TitleBar}" />
 
