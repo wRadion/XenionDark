@@ -151,7 +151,7 @@
                         Grid.Column="0"
                         Background="Transparent"
                         Margin="0px 0px -8px 0px"
-                        Padding="4px">
+                        Padding="8px 4px 0px 4px">
                     <Grid>
                         <ContentPresenter x:Name="Icon"
                                           Content="{TemplateBinding Icon}"
@@ -303,8 +303,10 @@
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="HasHeader" Value="False" />
+                    <Condition Property="Icon" Value="{x:Null}" />
                     <Condition Property="Role" Value="SubmenuItem" />
                 </MultiTrigger.Conditions>
+                <Setter Property="Focusable" Value="False" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type local:MenuItem}">
@@ -332,8 +334,10 @@
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="HasHeader" Value="False" />
+                    <Condition Property="Icon" Value="{x:Null}" />
                     <Condition Property="Role" Value="TopLevelItem" />
                 </MultiTrigger.Conditions>
+                <Setter Property="Focusable" Value="False" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type local:MenuItem}">
