@@ -72,7 +72,7 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="HasContent" Value="True">
-                            <Setter Property="Padding" Value="4,-1,0,0" />
+                            <Setter Property="Padding" Value="4px 0 0 0" />
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">

@@ -36,13 +36,39 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}">
-                        <local:ScrollViewer x:Name="PART_ContentHost"
-                                      Foreground="{TemplateBinding Foreground}"
-                                      Focusable="False"
-                                      HorizontalScrollBarVisibility="Hidden"
-                                      VerticalScrollBarVisibility="Hidden" />
+                        <Grid>
+                            <local:TextBlock x:Name="placeholder"
+                                             Foreground="{TemplateBinding Foreground}"
+                                             Text="{Binding Placeholder, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                             IsHitTestVisible="False"
+                                             HorizontalAlignment="Left"
+                                             VerticalAlignment="Center"
+                                             Margin="4px 1px 0 0"
+                                             Opacity="0.5"
+                                             Visibility="Collapsed" />
+
+                            <local:ScrollViewer x:Name="PART_ContentHost"
+                                                Foreground="{TemplateBinding Foreground}"
+                                                Margin="0 1px 0 0"
+                                                Focusable="False"
+                                                HorizontalScrollBarVisibility="Hidden"
+                                                VerticalScrollBarVisibility="Hidden" />
+                        </Grid>
                     </Border>
+
                     <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value="" />
+                                <Condition Property="IsFocused" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="placeholder" Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+
+                        <Trigger Property="Placeholder" Value="{x:Null}">
+                            <Setter TargetName="placeholder" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground"  Value="{StaticResource Foreground.Hover}" />
                             <Setter Property="BorderBrush" Value="{StaticResource Border.Hover}" />

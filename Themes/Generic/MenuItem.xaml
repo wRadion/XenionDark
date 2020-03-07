@@ -72,11 +72,11 @@
                                  Margin="{TemplateBinding Padding}" />
 
                 <Popup x:Name="PART_Popup"
-                       IsOpen="{Binding IsHighlighted, Mode=OneWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                       IsEnabled="{Binding Path=HasItems, Mode=OneTime, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                       IsOpen="False"
                        StaysOpen="False"
-                       AllowsTransparency="True"
-                       Placement="Right">
+                       VerticalOffset="-1"
+                       Placement="Right"
+                       Visibility="Collapsed">
                     <Border Background="{Binding Background, RelativeSource={RelativeSource AncestorType=MenuBase}}"
                             BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=MenuBase}}"
                             BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource AncestorType=MenuBase}}"
@@ -93,9 +93,18 @@
             </Trigger>
 
             <Trigger Property="HasItems" Value="True">
+                <Setter TargetName="PART_Popup" Property="Visibility" Value="Visible" />
                 <Setter TargetName="gestureText" Property="Text" Value="⯈" />
                 <Setter TargetName="gestureText" Property="Opacity" Value="1" />
             </Trigger>
+
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="HasItems" Value="True" />
+                    <Condition Property="IsHighlighted" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="PART_Popup" Property="IsOpen" Value="True" />
+            </MultiTrigger>
 
             <Trigger Property="IsCheckable" Value="True">
                 <Setter TargetName="checkBox" Property="Visibility" Value="Visible" />
@@ -193,10 +202,9 @@
 
                 <Popup x:Name="PART_Popup"
                        IsOpen="{TemplateBinding IsSubmenuOpen}"
-                       IsEnabled="{Binding Path=HasItems, Mode=OneTime, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                        StaysOpen="False"
-                       AllowsTransparency="True"
-                       Placement="Bottom">
+                       Placement="Bottom"
+                       Visibility="Collapsed">
                     <Border Background="{Binding Background, RelativeSource={RelativeSource AncestorType=MenuBase}}"
                             BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=MenuBase}}"
                             BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource AncestorType=MenuBase}}"
@@ -210,6 +218,10 @@
         <ControlTemplate.Triggers>
             <Trigger Property="Icon" Value="{x:Null}">
                 <Setter TargetName="iconOrCheckBoxBorder" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+
+            <Trigger Property="HasItems" Value="True">
+                <Setter TargetName="PART_Popup" Property="Visibility" Value="Visible" />
             </Trigger>
 
             <MultiTrigger>

@@ -41,7 +41,7 @@
         <Setter Property="FocusVisualStyle" Value="{StaticResource Main.FocusVisualStyle}" />
 
         <Setter Property="Margin"  Value="0" />
-        <Setter Property="Padding" Value="6px 3px 5px 3px" />
+        <Setter Property="Padding" Value="12px 8px" />
 
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="auto" />
@@ -67,7 +67,7 @@
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="1 0 0 0"
-                                    Padding="8px 4px"
+                                    Padding="8px 6px 8px 4px"
                                     HorizontalAlignment="Right">
                                 <local:TextBlock Foreground="{TemplateBinding Foreground}"
                                                  VerticalAlignment="Center"
@@ -101,8 +101,8 @@
                                               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                               Content="{TemplateBinding SelectionBoxItem}"
                                               ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
-                                              IsHitTestVisible="False"
-                                              Margin="8px 0" />
+                                              Margin="{TemplateBinding Padding}"
+                                              IsHitTestVisible="False" />
 
                             <!-- Editable TextBox -->
                             <Border x:Name="editableTextBox"

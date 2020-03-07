@@ -76,11 +76,13 @@
 
         <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="32px" />
+                <ColumnDefinition Width="36px" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ContentPresenter Grid.Column="0" Content="{Binding Icon, ElementName=this_TitleBar}" />
+            <ContentPresenter Grid.Column="0" 
+                              HorizontalAlignment="Center"
+                              Content="{Binding Icon, ElementName=this_TitleBar}" />
 
             <local:TextBlock Grid.Column="1"
                              HorizontalAlignment="Left"
