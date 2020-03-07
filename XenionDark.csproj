@@ -172,8 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Resource Include="README\XenionDark_HowToUse_ImportDll.gif" />
+    <Resource Include="README\XenionDark_MainWindow.png" />
     <Resource Include="README\XenionDark_v1.0.0_Preview.gif" />
+    <Resource Include="README\XenionDark_HowToUse_ImportDll.gif" />
     <Resource Include="Themes\Generic\Resources\Images\Window\close_icon.png" />
     <Resource Include="Themes\Generic\Resources\Images\Window\maximize_icon.png" />
     <Resource Include="Themes\Generic\Resources\Images\Window\minimize_icon.png" />
