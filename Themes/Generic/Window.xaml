@@ -47,7 +47,7 @@
                                 </controls:TitleBar>
 
                                 <!-- Main Content -->
-                                <Border Background="{StaticResource Background.Normal}">
+                                <Border Background="{StaticResource Background.Normal}" Padding="{TemplateBinding Padding}">
                                     <AdornerDecorator>
                                         <ContentPresenter Content="{TemplateBinding Content}" />
                                     </AdornerDecorator>
