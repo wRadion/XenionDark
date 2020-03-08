@@ -64,7 +64,7 @@ namespace XenionDark
             if (!CanResize()) return;
 
             if (type == MaximizedWindowType.Default)
-                MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight - 2;
+                MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
             else if (type == MaximizedWindowType.Fullscreen)
                 MaxHeight = double.PositiveInfinity;
         }

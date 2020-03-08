@@ -8,6 +8,11 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type local:Window}">
+        <Setter Property="BorderBrush"              Value="Transparent" />
+        <Setter Property="BorderThickness"          Value="0" />
+        <Setter Property="MaximizedBorderBrush"     Value="Transparent" />
+        <Setter Property="MaximizedBorderThickness" Value="0" />
+
         <Setter Property="WindowStyle" Value="ThreeDBorderWindow" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
