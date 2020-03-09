@@ -19,6 +19,7 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Menu.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ContextMenu.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Switch.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Slider.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

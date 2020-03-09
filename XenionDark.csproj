@@ -53,6 +53,7 @@
     <Compile Include="Controls\CheckBox.cs" />
     <Compile Include="Controls\ComboBox.cs" />
     <Compile Include="Controls\ContextMenu.cs" />
+    <Compile Include="Controls\Slider.cs" />
     <Compile Include="Controls\Subcontrols\TitleBar.xaml.cs">
       <DependentUpon>TitleBar.xaml</DependentUpon>
     </Compile>
@@ -122,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Generic\Slider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic\Switch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="Wiki\Controls\scrollviewer.gif" />
     <Resource Include="Wiki\Controls\menu.gif" />
     <Resource Include="Wiki\Controls\contextmenu.gif" />
     <Resource Include="Wiki\Controls\textblock.png" />

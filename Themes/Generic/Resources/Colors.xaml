@@ -20,7 +20,7 @@
 
     <Color x:Key="Red.Main"   R="192" G="32"  B="32"  A="255" />
     <Color x:Key="Green.Main" R="64"  G="160" B="64"  A="255" />
-    <Color x:Key="Blue.Main"  R="32"  G="32"  B="192" A="255" />
+    <Color x:Key="Blue.Main"  R="64"  G="64"  B="160" A="255" />
 
     <SolidColorBrush x:Key="Background.Normal"       Color="{StaticResource Dark.Main}"    Opacity="1" />
 
