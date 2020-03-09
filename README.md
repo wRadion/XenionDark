@@ -3,10 +3,8 @@ A dark theme for WPF applications.
 
 **Table of contents**
 1. [Preview](#preview)
-2. [How to install](#how-to-install)
-3. [How to use](#how-to-use)
-   1. [Main Window](#main-window)
-   2. [Basic Controls](#basic-controls)
+2. [How to Install/Setup](#how-to-installsetup)
+3. [Basic Controls](#basic-controls)
 4. [Controls TODO](#controls-todo)
 5. [Issues, bugs, suggestions](#issues-bugs-suggestions)
 
