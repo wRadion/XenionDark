@@ -170,13 +170,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Resource Include="README\XenionDark_MainWindow.png" />
-    <Resource Include="README\XenionDark_v1.0.0_Preview.gif" />
-    <Resource Include="README\XenionDark_HowToUse_ImportDll.gif" />
+    <Resource Include="Wiki\Controls\menu.gif" />
+    <Resource Include="Wiki\Controls\contextmenu.gif" />
+    <Resource Include="Wiki\Controls\textblock.png" />
+    <Resource Include="Wiki\Controls\listbox.gif" />
+    <Resource Include="Wiki\Controls\combobox.gif" />
+    <Resource Include="Wiki\Controls\radiobutton.gif" />
+    <Resource Include="Wiki\Controls\checkbox.gif" />
+    <Resource Include="Wiki\Controls\textbox.gif" />
+    <Resource Include="Wiki\Controls\switch.gif" />
+    <Resource Include="Wiki\Controls\button.gif" />
+    <Resource Include="Wiki\XenionDark_MainWindow.png" />
+    <Resource Include="Wiki\XenionDark_v1.0.0_Preview.gif" />
+    <Resource Include="Wiki\XenionDark_HowToUse_ImportDll.gif" />
     <Resource Include="Themes\Generic\Resources\Images\Window\close_icon.png" />
     <Resource Include="Themes\Generic\Resources\Images\Window\maximize_icon.png" />
     <Resource Include="Themes\Generic\Resources\Images\Window\minimize_icon.png" />
     <Resource Include="Themes\Generic\Resources\Images\Window\unmaximize_icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
