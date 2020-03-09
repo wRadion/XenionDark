@@ -38,9 +38,9 @@
 
                                 <!-- Title Bar -->
                                 <controls:TitleBar DockPanel.Dock="Top"
+                                                   Title="{TemplateBinding Title}"
                                                    Height="{StaticResource Main.MinHeight}"
-                                                   Window="{Binding ThisWindow, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                   Title="{TemplateBinding Title}">
+                                                   Window="{Binding ThisWindow, RelativeSource={RelativeSource Mode=TemplatedParent}}">
                                     <controls:TitleBar.Icon>
                                         <Image Width="24px"
                                                Height="24px"

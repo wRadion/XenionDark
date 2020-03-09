@@ -155,7 +155,7 @@ Here is some controls that I plan to do in the future:
 - ToolBar
   - ToolBarPanel
   - ToolBarTray
-- TreeView 
+- TreeView
   - TreeViewItem
 
 I also plan to make this theme customizable (the colors for example)

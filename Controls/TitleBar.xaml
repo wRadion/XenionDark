@@ -84,10 +84,11 @@
                               HorizontalAlignment="Center"
                               Content="{Binding Icon, ElementName=this_TitleBar}" />
 
-            <local:TextBlock Grid.Column="1"
-                             HorizontalAlignment="Left"
-                             VerticalAlignment="Center"
-                             Text="{Binding Title, ElementName=this_TitleBar}" />
+            <TextBlock Grid.Column="1"
+                       Foreground="{StaticResource Foreground.Normal}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Text="{Binding Title, ElementName=this_TitleBar}" />
         </Grid>
 
         <Button x:Name="BtnMinimize" Grid.Column="1" Click="Minimize_Click">

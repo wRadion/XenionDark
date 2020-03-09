@@ -40,7 +40,7 @@
                                               TextElement.FontSize="{TemplateBinding FontSize}"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Margin="0px 0px 0px -2px"
+                                              Margin="2px 0px 2px -2px"
                                               Focusable="False"
                                               IsHitTestVisible="False"
                                               RecognizesAccessKey="True" />

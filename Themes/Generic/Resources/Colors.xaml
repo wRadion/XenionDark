@@ -53,7 +53,7 @@
     <SolidColorBrush x:Key="Clear.Darker"   Color="Black" Opacity="0.25" />
     <SolidColorBrush x:Key="Clear.Lighter"  Color="White" Opacity="0.1" />
 
-    <Thickness x:Key="Main.DefaultPadding">4px 0</Thickness>
+    <Thickness x:Key="Main.DefaultPadding">6px 0</Thickness>
     <sys:Double x:Key="Main.MinHeight">32</sys:Double>
     <FontFamily x:Key="Main.FontFamily">Sergoe UI</FontFamily>
     <sys:Double x:Key="Main.FontSize">14</sys:Double>
