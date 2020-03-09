@@ -15,42 +15,55 @@
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
         <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />
 
+        <Setter Property="UseLayoutRounding"   Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Focusable"        Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
 
+        <Setter Property="MinHeight" Value="{StaticResource Main.MinHeight}" />
         <Setter Property="Margin"  Value="0" />
-        <Setter Property="Padding" Value="2px 4px" />
+        <Setter Property="Padding" Value="{StaticResource Main.DefaultPadding}" />
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment"   Value="Center" />
+
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="Cursor" Value="IBeam" />
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:TextBox}">
-                    <Border x:Name="border"
-                            Background="{TemplateBinding Background}"
+
+                    <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}">
-                        <Grid>
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid Margin="{TemplateBinding Padding}">
                             <local:TextBlock x:Name="placeholder"
                                              Foreground="{TemplateBinding Foreground}"
+                                             FontFamily="{TemplateBinding FontFamily}"
+                                             FontSize="{TemplateBinding FontSize}"
+                                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                              Text="{Binding Placeholder, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                             Focusable="False"
+                                             Margin="0 0px 0 -1px"
+                                             Padding="0"
                                              IsHitTestVisible="False"
-                                             HorizontalAlignment="Left"
-                                             VerticalAlignment="Center"
-                                             Margin="4px 1px 0 0"
                                              Opacity="0.5"
                                              Visibility="Collapsed" />
 
                             <local:ScrollViewer x:Name="PART_ContentHost"
                                                 Foreground="{TemplateBinding Foreground}"
-                                                Margin="0 1px 0 0"
+                                                FontFamily="{TemplateBinding FontFamily}"
+                                                FontSize="{TemplateBinding FontSize}"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                Margin="-2px 0px -2px -1px"
+                                                Padding="0"
                                                 Focusable="False"
+                                                IsHitTestVisible="False"
                                                 HorizontalScrollBarVisibility="Hidden"
                                                 VerticalScrollBarVisibility="Hidden" />
                         </Grid>
@@ -80,18 +93,10 @@
                             <Setter Property="BorderBrush" Value="{StaticResource Border.Disabled}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="True" />
-                    <Condition Property="IsSelectionActive" Value="False" />
-                </MultiTrigger.Conditions>
-                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}" />
-            </MultiTrigger>
-        </Style.Triggers>
     </Style>
 
     <Style x:Key="ComboBoxEditableTextBox" TargetType="{x:Type local:TextBox}" BasedOn="{StaticResource {x:Type local:TextBox}}">

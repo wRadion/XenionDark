@@ -18,12 +18,13 @@
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
         <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />
 
+        <Setter Property="UseLayoutRounding"   Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Focusable"        Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource Main.FocusVisualStyle}" />
 
         <Setter Property="Margin"  Value="0" />
-        <Setter Property="Padding" Value="4px" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment"   Value="Center" />
 
@@ -37,33 +38,38 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <Border Background="{TemplateBinding Background}"
+                        <Border x:Name="checkBox"
+                                Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
                                 Width="{StaticResource CheckBox.Size}"
-                                Height="{StaticResource CheckBox.Size}">
+                                Height="{StaticResource CheckBox.Size}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
                             <local:TextBlock x:Name="checkBoxText"
                                              Foreground="{StaticResource Foreground.Normal}"
                                              HorizontalAlignment="Center"
                                              VerticalAlignment="Center" />
                         </Border>
 
-                        <ContentPresenter x:Name="contentPresenter"
-                                          Grid.Column="1"
-                                          TextElement.Foreground="{TemplateBinding Foreground}"
-                                          TextElement.FontSize="{TemplateBinding FontSize}"
-                                          Margin="{TemplateBinding Padding}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Focusable="False"
-                                          RecognizesAccessKey="True" />
+                        <Border Grid.Column="1"
+                                Padding="0 1px 0 0">
+                            <ContentPresenter Grid.Column="1"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"
+                                              TextElement.FontFamily="{TemplateBinding FontFamily}"
+                                              TextElement.FontSize="{TemplateBinding FontSize}"
+                                              Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              IsHitTestVisible="False"
+                                              RecognizesAccessKey="True" />
+                        </Border>
                     </Grid>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="HasContent" Value="True">
-                            <Setter Property="Padding" Value="6px 0 0 0" />
+                            <Setter TargetName="checkBox" Property="Margin" Value="0 0 6px 0" />
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">

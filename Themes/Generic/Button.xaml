@@ -15,12 +15,14 @@
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
         <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />
 
+        <Setter Property="UseLayoutRounding"   Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Focusable"        Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource Main.FocusVisualStyle}" />
 
+        <Setter Property="MinHeight" Value="{StaticResource Main.MinHeight}" />
         <Setter Property="Margin"  Value="0" />
-        <Setter Property="Padding" Value="12px 8px" />
+        <Setter Property="Padding" Value="{StaticResource Main.DefaultPadding}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment"   Value="Center" />
 
@@ -31,15 +33,16 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-
-                        <Border x:Name="contentBorder" Padding="{TemplateBinding Padding}">
+                        <Border x:Name="contentBorder"
+                                Padding="{TemplateBinding Padding}">
                             <ContentPresenter TextElement.Foreground="{TemplateBinding Foreground}"
                                               TextElement.FontFamily="{TemplateBinding FontFamily}"
                                               TextElement.FontSize="{TemplateBinding FontSize}"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Margin="0 1px 0 0"
+                                              Margin="0px 0px 0px -2px"
                                               Focusable="False"
+                                              IsHitTestVisible="False"
                                               RecognizesAccessKey="True" />
                         </Border>
                     </Border>
@@ -55,7 +58,7 @@
                             <Setter Property="Background"  Value="{StaticResource Out.Background.Pressed}" />
                             <Setter Property="BorderBrush" Value="{StaticResource Border.Pressed}" />
                             <Setter Property="Foreground"  Value="{StaticResource Foreground.Pressed}" />
-                            <Setter TargetName="contentBorder" Property="Margin"          Value="1 1 -1 -1" />
+                            <Setter TargetName="contentBorder" Property="Margin" Value="1 1 -1 -1" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">

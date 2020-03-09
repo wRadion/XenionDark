@@ -13,6 +13,9 @@
         <Setter Property="MaximizedBorderBrush"     Value="Transparent" />
         <Setter Property="MaximizedBorderThickness" Value="0" />
 
+        <Setter Property="UseLayoutRounding"   Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+
         <Setter Property="WindowStyle" Value="ThreeDBorderWindow" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
@@ -20,22 +23,22 @@
             </Setter.Value>
         </Setter>
 
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Window}">
 
                     <Border x:Name="border"
+                            Background="Transparent"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Background="Transparent" Padding="0">
-                        <Border x:Name="borderMaximized" Background="{TemplateBinding MaximizedBorderBrush}">
+                            Padding="0">
+                        <Border x:Name="borderMaximized"
+                                Background="{TemplateBinding MaximizedBorderBrush}">
                             <DockPanel>
 
                                 <!-- Title Bar -->
                                 <controls:TitleBar DockPanel.Dock="Top"
-                                                   Height="32px"
+                                                   Height="{StaticResource Main.MinHeight}"
                                                    Window="{Binding ThisWindow, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                                                    Title="{TemplateBinding Title}">
                                     <controls:TitleBar.Icon>
@@ -47,7 +50,8 @@
                                 </controls:TitleBar>
 
                                 <!-- Main Content -->
-                                <Border Background="{StaticResource Background.Normal}" Padding="{TemplateBinding Padding}">
+                                <Border Background="{StaticResource Background.Normal}"
+                                        Padding="{TemplateBinding Padding}">
                                     <AdornerDecorator>
                                         <ContentPresenter Content="{TemplateBinding Content}" />
                                     </AdornerDecorator>

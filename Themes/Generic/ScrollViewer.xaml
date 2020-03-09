@@ -8,6 +8,7 @@
 
     <Style TargetType="{x:Type local:ScrollViewer}">
         <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
 
         <Setter Property="Template">
             <Setter.Value>
@@ -33,8 +34,7 @@
                                                 CanHorizontallyScroll="False"
                                                 CanVerticallyScroll="False"
                                                 ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                Content="{TemplateBinding Content}"
-                                                Margin="{TemplateBinding Padding}" />
+                                                Content="{TemplateBinding Content}" />
 
                         <local:ScrollBar x:Name="PART_VerticalScrollBar"
                                          Grid.Column="1"

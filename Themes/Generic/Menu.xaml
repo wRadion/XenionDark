@@ -7,17 +7,22 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type local:Menu}">
-        <Setter Property="Background"  Value="{StaticResource Out.Background.Normal}"/>
-        <Setter Property="Foreground"  Value="{StaticResource Foreground.Normal}"/>
+        <Setter Property="Background"  Value="{StaticResource Out.Background.Normal}" />
+        <Setter Property="Foreground"  Value="{StaticResource Foreground.Normal}" />
         <Setter Property="BorderBrush" Value="{StaticResource Border.Normal}" />
         <Setter Property="BorderThickness" Value="1" />
 
-        <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}"/>
-        <Setter Property="FontSize" Value="{StaticResource Main.FontSize}"/>
+        <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource Main.FontSize}" />
 
+        <Setter Property="UseLayoutRounding"   Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
 
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="{StaticResource Main.MinHeight}" />
+        <Setter Property="Margin"  Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment"   Value="Center" />
 
         <Setter Property="Template">
             <Setter.Value>

@@ -42,7 +42,8 @@
                                     <ColumnDefinition Width="{StaticResource ResourceKey=Switch.Size.Length}" />
                                 </Grid.ColumnDefinitions>
 
-                                <Border Grid.Column="0">
+                                <Border Grid.Column="0"
+                                        Padding="0 1px 0 0">
                                     <local:TextBlock Foreground="{StaticResource Border.Normal}"
                                                      HorizontalAlignment="Center"
                                                      VerticalAlignment="Center"
@@ -50,7 +51,8 @@
                                                      Text="OFF" />
                                 </Border>
 
-                                <Border Grid.Column="1">
+                                <Border Grid.Column="1"
+                                        Padding="0 1px 0 0">
                                     <local:TextBlock Foreground="{StaticResource Border.Normal}"
                                                      HorizontalAlignment="Center"
                                                      VerticalAlignment="Center"

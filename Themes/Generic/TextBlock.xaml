@@ -13,8 +13,10 @@
         <Setter Property="FontFamily" Value="{StaticResource Main.FontFamily}" />
         <Setter Property="FontSize"   Value="{StaticResource Main.FontSize}" />
 
+        <Setter Property="UseLayoutRounding"   Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Focusable"        Value="False" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
 
         <Setter Property="Margin"  Value="0" />
         <Setter Property="Padding" Value="0" />
