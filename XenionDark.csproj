@@ -49,24 +49,24 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Button.cs" />
-    <Compile Include="CheckBox.cs" />
-    <Compile Include="ComboBox.cs" />
-    <Compile Include="ContextMenu.cs" />
-    <Compile Include="Controls\TitleBar.xaml.cs">
+    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\CheckBox.cs" />
+    <Compile Include="Controls\ComboBox.cs" />
+    <Compile Include="Controls\ContextMenu.cs" />
+    <Compile Include="Controls\Subcontrols\TitleBar.xaml.cs">
       <DependentUpon>TitleBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListBox.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MenuItem.cs" />
-    <Compile Include="RadioButton.cs" />
-    <Compile Include="ScrollBar.cs" />
-    <Compile Include="ScrollViewer.cs" />
-    <Compile Include="Switch.cs" />
-    <Compile Include="TextBlock.cs" />
-    <Compile Include="TextBox.cs" />
-    <Compile Include="Window.cs" />
-    <Page Include="Controls\TitleBar.xaml">
+    <Compile Include="Controls\ListBox.cs" />
+    <Compile Include="Controls\Menu.cs" />
+    <Compile Include="Controls\MenuItem.cs" />
+    <Compile Include="Controls\RadioButton.cs" />
+    <Compile Include="Controls\ScrollBar.cs" />
+    <Compile Include="Controls\ScrollViewer.cs" />
+    <Compile Include="Controls\Switch.cs" />
+    <Compile Include="Controls\TextBlock.cs" />
+    <Compile Include="Controls\TextBox.cs" />
+    <Compile Include="Windows\Window.cs" />
+    <Page Include="Controls\Subcontrols\TitleBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

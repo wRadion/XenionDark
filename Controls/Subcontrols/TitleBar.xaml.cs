@@ -2,10 +2,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace XenionDark.Controls
+namespace XenionDark.Controls.Subcontrols
 {
     /// <summary>
     /// Interaction logic for TitleBar.xaml

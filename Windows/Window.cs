@@ -1,8 +1,7 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 
-namespace XenionDark
+namespace XenionDark.Windows
 {
     public enum MaximizedWindowType
     {

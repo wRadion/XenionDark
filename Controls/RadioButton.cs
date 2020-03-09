@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace XenionDark
+namespace XenionDark.Controls
 {
    public class RadioButton : System.Windows.Controls.RadioButton
     {

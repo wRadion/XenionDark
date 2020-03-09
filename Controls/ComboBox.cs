@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace XenionDark
+namespace XenionDark.Controls
 {
     public enum SizeToItems
     {

@@ -7,7 +7,7 @@ A dark theme for WPF applications.
 3. [How to use](#how-to-use)
    1. [Main Window](#main-window)
    2. [Basic Controls](#basic-controls)
-4. [Roadmap](#roadmap)
+4. [Controls TODO](#controls-todo)
 5. [Issues, bugs, suggestions](#issues-bugs-suggestions)
 
 ## Preview
@@ -81,9 +81,7 @@ And you have to change the `Window` control to `xd:Window` in the .xaml file:
         xmlns:xd="clr-namespace:XenionDark;assembly=XenionDark"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-
     <!-- content ... -->
-
 </xd:Window>
 ```
 
@@ -91,6 +89,24 @@ Don't forget the namespace declaration!
 
 ```xml
   xmlns:xd="clr-namespace:XenionDark;assembly=XenionDark"
+```
+
+And, add the `Generic.xaml` resource file in your `App.xaml`:
+
+```xml
+<Application x:Class="MyWPFApplication.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MyWPFApplication"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/XenionDark;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
 ```
 
 If you run your application, you should see this:
@@ -103,13 +119,13 @@ The current XenionDark version has the following controls implemented:
 - `xd:Button`
 - `xd:CheckBox`
 - `xd:ComboBox`
-  - `xd:ComboBoxItem`
+  - `ComboBoxItem`
 - `xd:ContextMenu` and `xd.Menu`
   - `xd:MenuItem`
   - **Separator** is implemented but it's tricky to override, so you have to use
   an empty `xd:MenuItem` to display a separator: `<xd:MenuItem />`
 - `xd:ListBox`
-  - `xd:ListBoxItem`
+  - `ListBoxItem`
 - `xd:RadioButton`
 - `xd:ScrollViewer`
   - `xd:ScrollBar`
@@ -125,38 +141,52 @@ The current XenionDark version has the following controls implemented:
 All the custom controls inherit the basic Windows control. So you can
 use any properties you want as if the control was the default one.
 
-## Roadmap
+## Controls TODO
 
-Here is some controls that I plan to do in the future:
+Here is the list of some controls that I plan to do in the future:
 
+- ~~Button~~ **(v1.0.0)**
 - Calendar
     - CalendarButton
     - CalendarDayButton
     - CalendarItem
+- ~~CheckBox~~ **(v1.0.0)**
+- ~~ComboBox~~ **(v1.0.0)**
+  - ~~ComboBoxItem~~ **(v1.0.0)**
+- ~~ContextMenu~~ **(v1.0.0)**
+  - ~~MenuItem~~ **(v1.0.0)**
 - DatePicker
   - DatePickerTextBox
 - GroupBox
+- ~~ListBox~~ **(v1.0.0)**
+  - ~~ListBoxItem~~ **(v1.0.0)**
 - ListView
   - ListViewItem
+- ~~Menu~~ **(v1.0.0)**
+  - ~~MenuItem~~ **(v1.0.0)**
+- MessageBox
 - PasswordBox
 - ProgressBar
+- ~~RadioButton~~ **(v1.0.0)**
 - RichTextBox
+- ~~ScrollViewer~~ **(v1.0.0)**
+  - ~~ScrollBar~~ **(v1.0.0)**
 - Slider
-  - TickBar?
-  - RepeatButton?
-  - Track?
-  - Thumb?
 - StatusBar
   - StatusBarItem
+- ~~Switch~~ **(Custom, v1.0.0)**
 - TabControl
   - TabItem
   - TabPanel
-- ToggleButton (already have Switch)
+- ~~TextBlock~~ **(v1.0.0)**
+- ~~TextBox~~ **(v1.0.0)**
+- ToggleButton (see Switch)
 - ToolBar
   - ToolBarPanel
   - ToolBarTray
 - TreeView
   - TreeViewItem
+- ~~Window~~ **(v1.0.0)**
 
 I also plan to make this theme customizable (the colors for example)
 and some other stuff. Hope you'll like it!
