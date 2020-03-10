@@ -10,7 +10,7 @@ A dark theme for WPF applications.
 
 ## Preview
 
-![Preview](Wiki/XenionDark_v1.0.0_Preview.gif)
+![Preview](Wiki/XenionDark_v1.1.0_Preview.gif)
 
 ## How to install/setup
 
@@ -26,7 +26,9 @@ The current XenionDark version has the following controls implemented:
 - [`xd:ListBox`](https://github.com/wRadion/XenionDark/wiki/Controls:-ListBox)
 - [`xd:RadioButton`](https://github.com/wRadion/XenionDark/wiki/Controls:-RadioButton)
 - [`xd:ScrollViewer`](https://github.com/wRadion/XenionDark/wiki/Controls:-ScrollViewer)
+- [`xd:Slider`](https://github.com/wRadion/XenionDark/wiki/Controls:-Slider)
 - [`xd:Switch`](https://github.com/wRadion/XenionDark/wiki/Controls:-Switch)
+- [`xd:TabControl`](https://github.com/wRadion/XenionDark/wiki/Controls:-TabControl)
 - [`xd:TextBlock`](https://github.com/wRadion/XenionDark/wiki/Controls:-TextBlock)
 - [`xd:TextBox`](https://github.com/wRadion/XenionDark/wiki/Controls:-TextBox)
 - [`xdw:Window`](https://github.com/wRadion/XenionDark/wiki/Windows:-Window)
@@ -64,13 +66,12 @@ Here is the list of some controls that I plan to do in the future:
 - RichTextBox
 - ~~ScrollViewer~~ **(v1.0.0)**
   - ~~ScrollBar~~ **(v1.0.0)**
-- Slider
+- ~~Slider~~ **(v1.1.0)**
 - StatusBar
   - StatusBarItem
 - ~~Switch~~ **(Custom, v1.0.0)**
-- TabControl
-  - TabItem
-  - TabPanel
+- ~~TabControl~~ **(v1.1.0)**
+  - ~~TabItem~~ **(v1.1.0)**
 - ~~TextBlock~~ **(v1.0.0)**
 - ~~TextBox~~ **(v1.0.0)**
 - ToggleButton (see Switch)

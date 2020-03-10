@@ -184,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="Wiki\XenionDark_v1.1.0_Preview.gif" />
     <Resource Include="Wiki\Controls\scrollviewer.gif" />
     <Resource Include="Wiki\Controls\menu.gif" />
     <Resource Include="Wiki\Controls\contextmenu.gif" />
