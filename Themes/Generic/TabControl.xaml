@@ -76,7 +76,7 @@
                             <Setter Property="Height" TargetName="RowDefinition0" Value="*" />
                             <Setter Property="Height" TargetName="RowDefinition1" Value="Auto" />
                         </Trigger>
-                        
+
                         <Trigger Property="TabStripPlacement" Value="Left">
                             <Setter Property="Grid.Row" TargetName="headerPanel" Value="0" />
                             <Setter Property="Grid.Row" TargetName="contentPanel" Value="0" />

@@ -30,16 +30,15 @@
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="Cursor" Value="IBeam" />
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:TextBox}">
 
-                    <Border Background="{TemplateBinding Background}"
+                    <Border Background="Transparent"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <Grid Margin="{TemplateBinding Padding}">
+                        <Grid>
                             <local:TextBlock x:Name="placeholder"
                                              Foreground="{TemplateBinding Foreground}"
                                              FontFamily="{TemplateBinding FontFamily}"
@@ -47,21 +46,23 @@
                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                              Text="{Binding Placeholder, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                             Focusable="False"
                                              Margin="0 0px 0 -1px"
-                                             Padding="0"
+                                             Padding="{TemplateBinding Padding}"
+                                             Focusable="False"
                                              IsHitTestVisible="False"
                                              Opacity="0.5"
                                              Visibility="Collapsed" />
 
                             <local:ScrollViewer x:Name="PART_ContentHost"
+                                                Background="{TemplateBinding Background}"
                                                 Foreground="{TemplateBinding Foreground}"
                                                 FontFamily="{TemplateBinding FontFamily}"
                                                 FontSize="{TemplateBinding FontSize}"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                Margin="-2px 0px -2px -1px"
-                                                Padding="0"
+                                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                HorizontalAlignment="Stretch"
+                                                VerticalAlignment="Stretch"
+                                                Padding="{TemplateBinding Padding}"
                                                 Focusable="False"
                                                 IsHitTestVisible="False"
                                                 HorizontalScrollBarVisibility="Hidden"
