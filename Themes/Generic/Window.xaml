@@ -8,6 +8,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type local:Window}">
+        <Setter Property="Background" Value="{StaticResource Background.Normal}" />
         <Setter Property="BorderBrush"              Value="Transparent" />
         <Setter Property="BorderThickness"          Value="0" />
         <Setter Property="MaximizedBorderBrush"     Value="Transparent" />
@@ -50,7 +51,7 @@
                                 </controls:TitleBar>
 
                                 <!-- Main Content -->
-                                <Border Background="{StaticResource Background.Normal}"
+                                <Border Background="{TemplateBinding Background}"
                                         Padding="{TemplateBinding Padding}">
                                     <AdornerDecorator>
                                         <ContentPresenter Content="{TemplateBinding Content}" />

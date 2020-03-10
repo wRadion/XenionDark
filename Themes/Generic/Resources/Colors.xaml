@@ -50,8 +50,9 @@
     <SolidColorBrush x:Key="Out.Foreground.Selected" Color="{StaticResource Light.Lightest}" Opacity="1" />
     <SolidColorBrush x:Key="In.Foreground.Selected"  Color="{StaticResource Light.Light}"    Opacity="1" />
 
-    <SolidColorBrush x:Key="Clear.Darker"   Color="Black" Opacity="0.25" />
-    <SolidColorBrush x:Key="Clear.Lighter"  Color="White" Opacity="0.1" />
+    <SolidColorBrush x:Key="Clear.Darker"           Color="Black" Opacity="0.25" />
+    <SolidColorBrush x:Key="Clear.SlightlyLighter"  Color="White" Opacity="0.05" />
+    <SolidColorBrush x:Key="Clear.Lighter"          Color="White" Opacity="0.1" />
 
     <Thickness x:Key="Main.DefaultPadding">6px 0</Thickness>
     <sys:Double x:Key="Main.MinHeight">32</sys:Double>
