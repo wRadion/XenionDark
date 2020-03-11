@@ -23,6 +23,8 @@ The current XenionDark version has the following controls implemented:
 - [`xd:CheckBox`](https://github.com/wRadion/XenionDark/wiki/Controls:-CheckBox)
 - [`xd:ComboBox`](https://github.com/wRadion/XenionDark/wiki/Controls:-ComboBox)
 - [`xd:ContextMenu`](https://github.com/wRadion/XenionDark/wiki/Controls:-ContextMenu)
+- [`xd:NumberBoxFloat`](https://github.com/wRadion/XenionDark/wiki/Controls:-NumberBoxFloat)
+- [`xd:NumberBoxInteger`](https://github.com/wRadion/XenionDark/wiki/Controls:-NumberBoxInteger)
 - [`xd:ListBox`](https://github.com/wRadion/XenionDark/wiki/Controls:-ListBox)
 - [`xd:RadioButton`](https://github.com/wRadion/XenionDark/wiki/Controls:-RadioButton)
 - [`xd:ScrollViewer`](https://github.com/wRadion/XenionDark/wiki/Controls:-ScrollViewer)
@@ -60,6 +62,8 @@ Here is the list of some controls that I plan to do in the future:
 - ~~Menu~~ **(v1.0.0)**
   - ~~MenuItem~~ **(v1.0.0)**
 - MessageBox
+- ~~NumberBoxFloat~~ **(Custom, v1.1.0)**
+- ~~NumberBoxInteger~~ **(Custom, v1.1.0)**
 - PasswordBox
 - ProgressBar
 - ~~RadioButton~~ **(v1.0.0)**
