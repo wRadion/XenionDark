@@ -194,6 +194,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="Wiki\Controls\numberboxfloat.gif" />
+    <Resource Include="Wiki\Controls\numberboxinteger.gif" />
     <Resource Include="Wiki\Controls\slider.gif" />
     <Resource Include="Wiki\Controls\tabcontrol.gif" />
     <Resource Include="Wiki\Controls\tabcontrol_tabpadding.png" />

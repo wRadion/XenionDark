@@ -17,23 +17,23 @@ namespace XenionDark.Controls
     {
         public const string IntegerRegex = "^-?\\d*$";
 
-        public static DependencyPropertyKey ValuePropertyKey = DependencyProperty.RegisterReadOnly("Value", typeof(int), typeof(NumberBoxInteger), new PropertyMetadata());
         public static DependencyPropertyKey IsValidPropertyKey = DependencyProperty.RegisterReadOnly("IsValid", typeof(bool), typeof(NumberBoxInteger), new PropertyMetadata(true));
 
+        public static DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(int), typeof(NumberBoxInteger));
         public static DependencyProperty NumberSignProperty = DependencyProperty.Register("NumberSign", typeof(NumberSign), typeof(NumberBoxInteger), new PropertyMetadata(NumberSign.Both));
         public static DependencyProperty MinimumProperty = DependencyProperty.Register("Minimum", typeof(int), typeof(NumberBoxInteger), new PropertyMetadata(int.MinValue));
         public static DependencyProperty MaximumProperty = DependencyProperty.Register("Maximum", typeof(int), typeof(NumberBoxInteger), new PropertyMetadata(int.MaxValue));
-
-        public int Value
-        {
-            get => (int)GetValue(ValuePropertyKey.DependencyProperty);
-            private set => SetValue(ValuePropertyKey, value);
-        }
 
         public bool IsValid
         {
             get => (bool)GetValue(IsValidPropertyKey.DependencyProperty);
             private set => SetValue(IsValidPropertyKey, value);
+        }
+
+        public int Value
+        {
+            get => (int)GetValue(ValueProperty);
+            set => SetValue(ValueProperty, value);
         }
 
         public NumberSign NumberSign
@@ -73,10 +73,31 @@ namespace XenionDark.Controls
             if (Minimum > Maximum)
                 throw new ArgumentException("Minimum value cannot be greater than Maximum value.");
 
-            CheckAndUpdateValue();
+            CheckValue();
         }
 
-        private void CheckAndUpdateValue()
+        private void CheckValue()
+        {
+            if ((NumberSign == NumberSign.Positive && Value >= 0) || (NumberSign == NumberSign.Negative && Value <= 0) || NumberSign == NumberSign.Both)
+            {
+                if (Value <= Minimum)
+                    Value = Minimum;
+                else if (Value >= Maximum)
+                    Value = Maximum;
+            }
+            else
+            {
+                if (NumberSign == NumberSign.Positive)
+                    Value = Minimum;
+                else if (NumberSign == NumberSign.Negative)
+                    Value = Maximum;
+            }
+
+            Text = Value.ToString();
+            _lastValidValue = Value;
+        }
+
+        private void CheckText()
         {
             if (string.IsNullOrWhiteSpace(Text) || Text == "-")
                 Value = Minimum;
@@ -116,7 +137,11 @@ namespace XenionDark.Controls
                 CaretIndex = e.Changes.Last().Offset;
             }
             else
+            {
                 IsValid = int.TryParse(Text, out int value) && ((NumberSign == NumberSign.Positive && value >= 0) || (NumberSign == NumberSign.Negative && value <= 0) || NumberSign == NumberSign.Both) && Minimum <= value && value <= Maximum;
+                if (IsValid)
+                    Value = value;
+            }
 
             _lastText = Text;
         }
@@ -124,8 +149,7 @@ namespace XenionDark.Controls
         protected override void OnLostFocus(RoutedEventArgs e)
         {
             base.OnLostFocus(e);
-
-            CheckAndUpdateValue();
+            CheckText();
         }
 
     }
