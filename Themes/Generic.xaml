@@ -7,7 +7,8 @@
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Window.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Button.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/TextBox.xaml" />
-        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/NumberBox.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/NumberBoxInteger.xaml" />
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/NumberBoxFloat.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ScrollBar.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ScrollViewer.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/ComboBoxItem.xaml" />
