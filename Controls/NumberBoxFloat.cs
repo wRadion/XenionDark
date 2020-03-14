@@ -141,8 +141,8 @@ namespace XenionDark.Controls
 
         protected override void OnLostFocus(RoutedEventArgs e)
         {
-            base.OnLostFocus(e);
             CheckText();
+            base.OnLostFocus(e);
         }
 
     }

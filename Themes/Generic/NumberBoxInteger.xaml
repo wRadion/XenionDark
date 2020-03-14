@@ -3,6 +3,7 @@
                     xmlns:local="clr-namespace:XenionDark.Controls">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/XenionDark;component/Themes/Generic/Resources/Colors.xaml" />
         <ResourceDictionary Source="/XenionDark;component/Themes/Generic/TextBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
