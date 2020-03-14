@@ -83,22 +83,23 @@
                         <Trigger Property="Placeholder" Value="{x:Null}">
                             <Setter TargetName="placeholder" Property="Visibility" Value="Collapsed" />
                         </Trigger>
-
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Hover}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource Border.Hover}" />
-                        </Trigger>
-
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background"  Value="{StaticResource Background.Disabled}" />
-                            <Setter Property="Foreground"  Value="{StaticResource Foreground.Disabled}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource Border.Disabled}" />
-                        </Trigger>
                     </ControlTemplate.Triggers>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground"  Value="{StaticResource Foreground.Hover}" />
+                <Setter Property="BorderBrush" Value="{StaticResource Border.Hover}" />
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background"  Value="{StaticResource Background.Disabled}" />
+                <Setter Property="Foreground"  Value="{StaticResource Foreground.Disabled}" />
+                <Setter Property="BorderBrush" Value="{StaticResource Border.Disabled}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="ComboBoxEditableTextBox" TargetType="{x:Type local:TextBox}" BasedOn="{StaticResource {x:Type local:TextBox}}">
