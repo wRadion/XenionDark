@@ -20,6 +20,12 @@
 
         <Setter Property="Margin"  Value="0" />
         <Setter Property="Padding" Value="0" />
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource Foreground.Disabled}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>
