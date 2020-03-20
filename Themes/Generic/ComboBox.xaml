@@ -80,11 +80,6 @@
                                 <ColumnDefinition Width="auto" />
                             </Grid.ColumnDefinitions>
 
-                            <!-- Set ComboBox width automatically (SizeToItems == Width) -->
-                            <local:ListBox x:Name="listBox"
-                                            Grid.Column="0"
-                                            ItemsSource="{Binding Items, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-
                             <!-- ToggleButton -->
                             <Border Grid.Column="1"
                                     Background="{TemplateBinding Background}"
