@@ -37,7 +37,7 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <local:ScrollViewer Focusable="False" Padding="{TemplateBinding Padding}">
+                        <local:ScrollViewer Focusable="False">
                             <ItemsPresenter />
                         </local:ScrollViewer>
                     </Border>
